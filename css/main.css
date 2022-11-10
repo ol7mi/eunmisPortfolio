@@ -9,6 +9,9 @@ html, body {
 html {
     cursor: url(../images/pointer.png), auto;
 }
+section {
+    overflow: hidden;
+}
 .start-screen, .end-screen, .screen {
     width: 100%;
     height: 100vh;
@@ -844,12 +847,13 @@ html {
         position: relative; 
         display: flex;justify-content: center;align-items: center;flex-wrap: wrap;
         margin: 0 auto;
-        height: 100%;width: 60%;
+        height: 80%;width: 600px;background-color: yellow;
     }
     .skill .skillList {
         position: relative; 
         display: flex;justify-content: center;align-items: center;
-        width: 220px; height: 250px; animation: upup 0.5s ease-out alternate-reverse infinite;
+        width: 200px; height: 250px;
+        animation: upup 0.5s ease-out alternate-reverse infinite;
     }
     .skill .skillList.upup {
         animation: upup2 0.5s ease-out alternate-reverse infinite;
@@ -1848,13 +1852,25 @@ html {
         position: relative; 
         display: flex;justify-content: center;align-items: center;flex-wrap: wrap;
         margin: 0 auto;
-        height: 100%;width: 100%;
+        height: 80%;width: 600px;
     }
     .skill .skillList {
         position: relative; 
         display: flex;justify-content: center;align-items: center;
         width: 200px; height: 250px;
+        animation: upup 0.5s ease-out alternate-reverse infinite;
     }
+    @keyframes upup {
+        100% {
+            transform: translateY(-10%);
+        }
+    }
+    @keyframes upup2 {
+        100% {
+            transform: translateY(10%);
+        }
+    }
+    .skill .skillList:nth-child(7),.skill .skillList:nth-child(8) {display: none;}
     .skill .skillList .percent {
         position: relative;width: 150px;height: 150px;
     }
@@ -1927,7 +1943,7 @@ html {
     } 
     .percent p {
         color: #f0f5f9;
-        font-size: 0.5em;
+        font-size: 1em;
         letter-spacing: 2px;
         text-transform: uppercase;
     }
