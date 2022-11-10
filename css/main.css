@@ -1,0 +1,3044 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Titan+One&display=swap');
+@import url(reset.css);
+/* 공통 */
+html, body {
+    background-color:  #c9d6de;
+    font-family: 'Titan One', cursive;
+    color: #1e2022;
+}
+html {
+    cursor: url(../images/pointer.png), auto;
+}
+.start-screen, .end-screen, .screen {
+    width: 100%;
+    height: 100vh;
+    background-color: #1e2022;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    color: #c9d6de;
+    text-align: center;
+    line-height: 1.2;
+}
+
+@media screen and (min-width:1024px){
+    /* 하단 */
+    .screen {
+        background-color: #c9d6de;
+    }
+    .screen section {
+        width: 100%;
+        height: 100vh;
+        background-color: #c9d6de;
+        font-size: 2vw;
+        display: flex;justify-content: space-evenly;align-items: center; 
+        opacity: 0;
+        transition: all 5s;
+    }
+    .screen section ul {
+        background-color: #fff;
+        width: 70%;
+    }
+
+
+    /* 제목 */
+    .start-screen > h1 {animation: bounce 0.5s ease-out alternate-reverse infinite;}
+    @keyframes bounce {
+        100% {
+            transform: translateY(-20%);
+        }
+    }
+
+    .end-screen {
+        font-size: 8vw;
+    }
+
+    /* PROJECT LIST */
+    .main-content-1 {width: 100%;height: 500vh;}
+    .sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .sticky-background {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8vw;
+    }
+    .card-frame {
+        position: absolute;
+        width: 95vw;
+        height: 30vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card {
+        width: 24%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20vw;
+        transform-style: preserve-3d;
+        position: relative;
+        transform: perspective(100vw)
+        translateX(100vw) 
+        rotateY(180deg);
+        transition: transform 0.1s;
+        font-size: 2em;
+
+    }
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 1vw;
+        overflow: hidden;
+        backface-visibility: hidden;
+    }
+    .front {
+        background-color: #FFF;
+        font-size: 0.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .project_box{
+        background-color: yellow;
+        display: flex; flex-direction: column;
+        width: 100%;height: 100%;
+    }
+    /* 이미지 */
+    .project_box > .img {
+    background-color: #c9d6de;width: 100%;height: 80%; overflow-y: scroll;
+    }
+    .project_box > .img::-webkit-scrollbar {
+        width: 10px;
+    }
+    .project_box > .img::-webkit-scrollbar-thumb {
+        background-color: #f0f5f9; border-radius: 50px;
+    }
+    .project_box > .img::-webkit-scrollbar-track {
+        background-color: rgba(223, 218, 218, 0.324);
+        border-radius: 10px;
+    }
+    /* 제목 */
+    .project_box .hed {
+        background-color: #f0f5f9;width: 100%;height: 10%;
+    }
+    .project_box .hed h2 {
+        width: 100%;height: 100%;
+        font-size: 20px; color: #c9d6de; text-shadow: 1px 1px 1px #3B3A38;
+        display: flex;flex-direction: row; justify-content: center; align-items: center;
+        transition: color ease 0.5s;
+        opacity: 0.5;animation: top 2s alternate 1s infinite;
+    }
+    @keyframes top {
+        0%{top: 120px;transform: translate(0px);}
+        50%{top: 120px;transform: translate(-5px);}
+        100%{top: 10px;transform: translate(5px);}
+    }
+    /* 버튼 */
+    .project_box > .btn {
+        background-color: #f0f5f9;width: 100%;height: 10%;
+        font-size: 1.2rem;
+    }
+    .project_box > .btn span {
+        width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-around; align-items: center;
+    }
+    .project_box > .btn span a {
+        color: #c9d6de;text-shadow: 1px 1px 1px #3B3A38;
+    }
+    .project_box > .btn span a:hover {
+        color: #3B3A38;text-shadow: 1px 1px 1px #c9d6de;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        background-color: #c9d6de;
+        background-image: repeating-linear-gradient(0deg, #1e2022, #1e2022 33.3%, #ffffff00 0px, #ffffff00 67%);
+        background-size: 100%;
+    }
+
+    @media screen and (orientation:portrait) {
+        .card-frame {
+            display: grid;
+            height: initial;
+            width: initial;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10vw;
+            justify-items: center;
+        }
+
+        .card {
+            font-size: 20vw;
+            width: 35vw;
+            height: 50vw;
+        }
+    }
+
+
+
+
+
+    /* react (movie , kakao) */
+    .react {width: 100%;height: 100%;display: flex;flex-direction: column;}
+    .react > .tit {width: 100%;height: 40%;}
+    .react > .tit > div {text-align: left;}
+    .react > .tit > div > p {font-size: 1vw;width: 55%;margin: 0 auto; color: #f0f5f9;}
+    .react > .tit > div > p:nth-of-type(1) {font-size: 1.2vw;text-align: center;margin-top: 3%;box-sizing: border-box;}
+    .react > .tit > div > p:nth-of-type(2) {font-size: 3vw;margin-bottom: 30px;text-align: center; color: #1e2022;}
+    .react > .tit > div > p span {color: #1e2022;display: inline-block;width: 130px;font-size: 25px;margin-right: 5px;box-sizing: border-box;}
+
+    .react > .movie_kakao {width: 100%;height: 60%;display: flex;}
+    .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;}
+    .react > .movie_kakao > div > .movie {width: 50%;height: 90%;position: relative;}
+    .react > .movie_kakao > div > .kakao {width: 50%;height: 90%;position: relative;}
+    .react > .movie_kakao > div > div > .imgbox {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);}
+    .react > .movie_kakao > div > div > .imgbox > div { 
+        display: flex; flex-direction: column;
+        border: 2px solid #ccc; 
+        border-radius: 20px 20px 0 0;
+        transition: transform 0.3s ease-in-out 0s;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div {transform: scale(1.1);}
+    .react > .movie_kakao > div > div > .imgbox > div > header {
+        display: flex;
+        height: 40px; width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px 20px 0 0;
+    }
+    .react > .movie_kakao > div > div > .imgbox > div > header > i {
+        font-size: 30px; text-align: center; color: #999; 
+        width: 10%;
+        padding-top: 5px;
+        transition: color 0.3s ease-in 0s;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div > header > i {
+        color: #ccc;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div::after {color: #333;}
+    .react > .movie_kakao > div > div > .imgbox > div > header > span {
+        background:#c9d6de;
+        color: #f0f5f9; text-shadow: 2px 2px 1px #ccc; 
+        letter-spacing: 5px; font-size: 18px;
+        border-radius: 10px;
+        width: 55%;height: 70%;
+        margin-top: 5px;box-sizing: border-box;
+        padding-left: 5%; 
+    }
+    .react > .movie_kakao > div > div > .imgbox > div > img {
+        width: 100%; 
+        object-fit: cover;
+    }
+    .react > .movie_kakao > div > div > .imgbox > div::after {
+        content: 'click'; 
+        display: block;
+        width: 100%;height: 40px;
+        background:#f0f5f9; 
+        text-align: center; font-size: 18px; letter-spacing: 3px;
+        padding-top: 8px;
+        box-sizing: border-box;
+        transition: color 0.3s ease-in-out 0s;
+    }
+
+    /* 이모지 */
+    .pure_container {width: 100%;height: 100%;display: flex;flex-direction: column;}
+    .pure_container > .pure {width: 100%;height: 35%;}
+    .pure_container > .pure > .pure_tit {color: #000;font-size: 3vw;letter-spacing: 2px;line-height: 2.5;margin-top: 3%;box-sizing: border-box;}
+    .pure_container > .pure > .pure_tit p:last-child{font-size: 1.2vw;color: #f0f5f9;text-shadow: 1px 1px 1px #000;}
+
+    .pure_container > .pure_box {width: 100%;height: 35%;font-size: 1.2vw}
+    .pure_container > .pure_box > ul {display: flex;flex-direction: row;align-items: center; width: 30%;height: 80%; margin: 0 auto;border-radius: 20px;border: dotted 1px #f0f5f9; background-color: #c9d6de;box-sizing: border-box;}
+    .pure_container > .pure_box > ul > li {width: 100%; letter-spacing: 2px;line-height: 2; color: #1e2022;}
+    .pure_container > .pure_box > ul > li > ul {width: 100%; color: #c9d6de;}
+
+    .pure_container > .purezone_box {width: 100%;height: 30%; position: relative;}
+    .pure_container > .purezone_box > .purezone {position: absolute;position: relative;width: 400px;height: 200px;margin: 0 auto;}
+    .pure_container > .purezone_box > .purezone > i {position: absolute; z-index: 5; cursor: pointer;transition: all 0.3s ease 0s;text-align: left;top: 60px;font-size: 80px; color: #f0f5f9;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(2) {right: 0;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(1) {left: 0;}
+    .pure_container > .purezone_box > .purezone > i:hover {color: #000;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(2):active {transform: translate(3px, 3px);}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(1):active {transform: translate(-3px, 3px);}
+    .pure_container > .purezone_box > .purezone > div {position: absolute; width: 100%;height: 100%;left: 0;top: 0;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure {position: absolute;width: 200px;height:200px;left: 50%;transform: translateX(-50%);top: 0;text-align: center;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure > .emoji {position: absolute;left: 12%; top: 10%;display: none;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure > .emoji:nth-of-type(1) {display: block;}
+    /* 페이스북 이모지 */
+    .emoji {
+        position: relative;
+        display: inline-block; 
+        width: 120px;height: 120px;
+        border-radius: 50%;
+        margin: 15px 15px 15px;
+        background: #ffda6a;
+    }
+    /* emoji emoji_like*/
+    .emoji_like {
+        background: #548dff;
+        top: 0px;
+    }
+    .emoji_like .emoji_hand {
+        position: absolute;
+        left: 25px;bottom: 30px;
+        width: 20px;height: 40px;
+        background: #fff;
+        border-radius: 5px;
+        animation: hands-up 2s linear 0s infinite;
+    }
+    @keyframes hands-up {
+        25% {transform: rotate(15deg);}
+        50% {transform: rotate(-15deg) translateY(-10px);}
+        75%,100% {transform: rotate(0deg);}
+    }
+
+    .emoji_like .emoji_hand::before {
+        content: "";
+        position: absolute;
+        left: 25px;bottom: 5px; 
+        width: 40px;height: 10px;
+        background: #fff;
+        border-radius: 2px 10px 10px 2px;
+        box-shadow: 1px -9px 0 1px #fff,2px -19px 0 2px #fff,3px -29px 0 3px #fff;
+    }
+    .emoji_like .emoji_thumb {
+        position: absolute; 
+        right: -25px;top: -25px;
+        border-bottom: 20px solid #fff;
+        border-left: 20px solid transparent; 
+        transform: rotate(5deg);
+        transform-origin: 0 100%;
+        animation: thumb-up 2s linear 0s infinite;
+    }
+    @keyframes thumb-up {
+        25% {transform: rotate(20deg);}
+        50%, 100% {transform: rotate(5deg);}
+    }
+    .emoji_like .emoji_thumb::before {
+        content: '';
+        position: absolute;
+        left: -9.7px;top: -9px;
+        width: 10px;height: 12px;
+        background: #fff;
+        border-radius: 50% 50% 0 0;
+        box-decoration-break: -1px 4px 0 0 #fff;
+        transform: rotate(-14deg);
+        transform-origin: 100% 100% 
+    }
+    /* emoji_love */
+    .emoji_love {
+        background: #f00; 
+        top: 0;
+    }
+    .emoji_love .emoji_heart {
+        position: absolute; 
+        left: 50%;top: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        width: 80px;height: 80px;
+        /* border: 1px solid #000; */
+        animation: heart-beat 1s linear infinite alternate;
+    }
+    @keyframes heart-beat {
+        25% {transform: scale(1.1);}
+        75% {transform: 0.6;}
+    }     
+    .emoji_heart::before, .emoji_heart::after {
+        content: '';
+        position: absolute;
+        left: 50%;top: 50%;
+        width: 40px;height: 64px;
+        margin-left: -20px;
+        margin-top: -32px;
+        background: #fff;
+        border-radius: 20px 20px 0 0;
+    }
+    .emoji_heart::before {
+        transform-origin: 0 100%;
+        transform:translateX(20px) rotate(-45deg);
+    }
+    .emoji_heart::after {
+        transform-origin: 100% 100%;
+        transform: translateX(-20px) rotate(45deg);
+    }
+    /* emoji emoji_haha */
+    .emoji.emoji_haha {top: 0;}
+    .emoji_haha .emoji_face {
+        position: absolute;
+        width: 100%; height: inherit; /* border: 1px solid #f00; */
+        animation:haha-face 2s linear infinite normal ;
+    }
+    @keyframes haha-face{
+        10% {transform: translateY(25px);}
+        20% {transform: translateY(15px);}
+
+        30% {transform: translateY(25px);}
+        20% {transform: translateY(15px);}
+
+        50% {transform: translateY(25px);}
+
+        60% {transform: translateY(0px);}
+        70% {transform: translateY(-10px);}
+
+        80% {transform: translateY(0px);}
+        90% {transform: translateY(-10px);}
+
+    }
+    .emoji_haha .emoji_eyes {
+        position: absolute; 
+        left: 50%;top: 35px;
+        margin-left: -13px;
+        width: 26px;height: 6px;
+        border-radius: 2px;
+        /* background: #fff; */
+        box-shadow: -25px 5px 0 0 #000,25px -5px 0 0 #000;
+        transform: rotate(20deg);
+    }
+    .emoji_haha .emoji_eyes::after {
+        content: "";
+        position: absolute;
+        left: 0;top: 0;
+        width: 26px;height: 6px;
+        border-radius: 2px;
+        box-shadow: -25px -5px 0 0 #000,25px 5px 0 0 #000;
+        transform: rotate(-40deg);
+    }    
+    .emoji_haha .emoji_mouth {
+        overflow: hidden;
+        position: absolute;
+        left: 50%;top: 50%;
+        width: 80px; height: 40px;
+        margin-left: -40px;
+        background: #000;
+        border-radius: 0 0 40px 40px;
+        animation: haha-mouth 2s linear infinite normal;
+    }
+                
+    @keyframes haha-mouth{
+        10% {transform:scale(0.6);top:45px;}
+        20% {transform:scale(0.8);top:45px;}
+
+        30% {transform:scale(0.6);top:45px;}
+        40% {transform:scale(0.8);top:45px;}
+
+        50% {transform:scale(0.6);top:45px;}
+
+        60% {transform:scale(1);top:50px;}
+        70% {transform:scale(1.2);top:50px;}
+
+        80% {transform:scale(1);top:50px;}
+        90% {transform:scale(1.1);top:50px;}
+    }         
+    .emoji_haha .emoji_tongue {
+        position: absolute;
+        left: 50%;bottom: -10px;
+        width: 70px;height: 30px;
+        margin-left: -35px;
+        background: #f55064;
+        border-radius: 50%;
+    }      
+    /* yay */
+    .emoji.emoji_yay {
+        top: 0;
+    }
+    .emoji_yay .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: yay 1s linear infinite alternate;
+    }
+    @keyframes yay{
+        25% {transform: rotate(-15deg);}
+        75% {transform: rotate(15deg);}
+    }    
+    .emoji_yay .emoji_eyebrows {
+        position: absolute; 
+        left: calc(50% - 3px);
+        top: 30px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -6px 0 0 0 #000,-36px 0 0 0 #000000,6px 0 0 0 #000,36px 0 0 0px;
+    }          
+    .emoji_yay .emoji_eyebrows::before,.emoji_yay .emoji_eyebrows::after {
+        content: ""; 
+        position: absolute; 
+        left: calc(50% - 18px);
+        bottom: 3px;
+        width: 36px;height: 18px; 
+        border-radius: 60px 60px 0 0;
+        border:6px solid #000;
+        border-bottom: 0;
+        box-sizing: border-box;
+    }
+    .emoji_yay .emoji_eyebrows::before {
+        margin-left: -21px;
+    } 
+    .emoji_yay .emoji_eyebrows::after {
+        margin-left: 21px;
+    }
+    .emoji_yay .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 3px);
+        top:60px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        /* background: #f00; */
+        box-shadow: -25px 0 0 0 #000,25px 0 0 0 #000
+        ,-35px 2px 30px 10px #D5234C,
+        35px -2px 30px 10px #D5234C;
+    }
+    .emoji_yay .emoji_mouth::after {
+        content: ''; 
+        position: absolute;
+        left: calc(50% - 40px); 
+        top: -64px;
+        width: 80px; height: 80px;
+        border-radius: 50%;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }    
+    /* wow */
+    .emoji.emoji_wow {
+        top: 0; left: 0px;
+    }
+    .emoji_wow .emoji_face {
+        position: absolute; 
+        width: 100%;height: inherit;
+        animation: wow-face 3s linear 0s infinite;
+    }
+    @keyframes wow-face {
+        15%,25% {transform: rotate(20deg) translateX(-25px);}
+        45%,65% {transform: rotate(-20deg) translateX(25px);}
+        75%,100% {transform: rotate(0deg) translateX(0px);}
+    }
+    .emoji_wow .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        /* background: #fff; */
+        box-shadow: -18px 0 0 0 #000, -33px 0 0 0 #000, 18px 0 0 0 #000, 33px 0 0 0 #000;
+        animation:wow-brow 3s linear 0s infinite;
+    }
+    @keyframes wow-brow {
+        15%,65% {top: 25px;}
+        75%,100%,0% {top:15px}
+    }
+    .emoji_wow .emoji_eyebrows::before, .emoji_wow .emoji_eyebrows::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 12px);
+        top: -3px;
+        width: 24px;height: 20px;
+        border-radius: 50%;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_wow .emoji_eyebrows::before {
+        margin-left: -25px;
+    } 
+    .emoji_wow .emoji_eyebrows::after {
+        margin-left: 25px;
+    }    
+    .emoji_wow .emoji_eyes {
+        position: absolute;
+        left: calc(50% - 8px);
+        top: 35px;
+        width: 16px;height: 24px;
+        border-radius: 50%; 
+        /* background: #f00; */
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+    .emoji_wow .emoji_tongue {
+        position: absolute;
+        left: calc(50% - 15px);
+        top: 50%;
+        width: 30px;height: 45px;
+        border-radius: 50%;
+        background: #000;
+        animation:wow-mouth 3s linear 0s infinite;
+    }
+    @keyframes wow-mouth {
+        10%,30% {width: 20px;height: 20px;left: calc(50% - 10px);}
+        50%,70% {width: 30px;height: 40px;left: calc(50% - 15px);}
+        75%,100% {height: 50px;}
+    }
+    /* emoji emoji_sad */
+    .emoji.emoji_sad {
+        top: 0; left: 0;
+    }
+    .emoji_sad .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: sad-face 2s ease-in 0s infinite;
+    }
+    @keyframes sad-face {
+        25%, 35% {top: -15px;}
+        55%, 95% {top: 10px;}
+        100%, 0% {top: 0px;}
+    }
+    .emoji_sad .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 35px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -40px 9px 0 0 #000,-25px 0 0 0 #000, 25px 0 0 0 #000,40px 9px 0 0 #000;
+    }
+    .emoji_sad .emoji_eyebrows::before , .emoji_sad .emoji_eyebrows::after {
+        content: ''; 
+        position: absolute;
+        left: calc(50% - 15px);
+        top: 2px;
+        width: 30px;height: 20px;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border-left-color: transparent; 
+        border-right-color: transparent; 
+        border-bottom-color: transparent;
+    }
+    .emoji_sad .emoji_eyebrows::before {
+        margin-left: -30px;
+        transform: rotate(-30deg);
+    }
+    .emoji_sad .emoji_eyebrows::after {
+        margin-left: 30px;
+        transform: rotate(30deg);
+    }
+    .emoji_sad .emoji_eyes { 
+        position: absolute;
+        left: calc(50% - 7px);
+        top: 50px;
+        width: 14px;height: 16px;
+        border-radius: 50%; 
+        /* background: #f00; */
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+    .emoji_sad .emoji_eyes::after {
+        content: '';
+        position: absolute;
+        width: 12px;height: 12px;
+        margin-left: 6px;
+        background: #548dff;
+        border-radius: 0 100% 40% 50% / 0 50% 40% 100%;
+        transform-origin: 0% 0%;
+        animation:tear-drop 2s ease-in infinite ;
+    }
+    @keyframes tear-drop{
+        0%,100% {
+            display: block;left: 35px;top: 15px;
+            transform: rotate(45deg) scale(0);
+        }
+        25% {
+            display: block;left: 35px;
+            transform: rotate(45deg) scale(2);
+        }
+        49.9% {
+            display: block;left: 35px;top: 65px;
+            transform: rotate(45deg) scale(0);
+        }
+        50% {
+            display: block;left: -35px;top: 15px;
+            transform: rotate(45deg) scale(0);
+        }
+        75% {
+            display: block;left: -35px;top: 15px;
+            transform: rotate(45deg) scale(2);
+        }
+        99.9% {
+            display: block;left: -35px;top: 65px;
+            transform: rotate(45deg) scale(0);
+        }
+    }
+
+    .emoji_sad .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 90px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -18px 0 0 0 #000,18px 0 0 0 #000;
+    }
+    .emoji_sad .emoji_mouth::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 30px);
+        top: -10px;
+        width: 60px;height: 80px;
+        box-sizing: border-box;
+        border: 6px solid #000;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    /* angry */
+    .emoji.emoji_angry {
+        top: 0; left: -0;
+    }
+    .emoji_angry {
+        background: linear-gradient(to bottom, #D5234C -10%,#FFDA6A 100%);
+        background-size: 100%;
+    }
+    .emoji_angry .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: angry-face 2s ease-in 0s infinite;
+    }
+    @keyframes angry-face {
+        35%,60% {transform: translateX(0) translateY(10px) scale(0.9);}
+        40% {transform: translateX(-5px) translateY(10px) scale(0.9);}
+        45% {transform: translateX(5px) translateY(10px) scale(0.9);}
+        50% {transform: translateX(-5) translateY(10px) scale(0.9);}
+        55% {transform: translateX(5) translateY(10px) scale(0.9);}
+    }
+    .emoji_angry .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 55px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -44px 5px 0 0 #000000,-7px 16px 0 0 #000000, 7px 16px 0 0 #000000,44px 5px 0 0 #000000;
+    }
+    .emoji_angry .emoji_eyebrows::before, .emoji_angry .emoji_eyebrows::after {
+        content: ''; 
+        position: absolute; 
+        left: calc(50% - 25px);
+        top: 0;
+        width: 50px;height: 20px;
+        border: 6px solid #000000;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_angry .emoji_eyebrows::before {
+        margin-left: -25px;
+        transform: rotate(15deg);
+    } 
+    .emoji_angry .emoji_eyebrows::after {
+        margin-left: 25px;
+        transform: rotate(-15deg);
+    }                            
+    .emoji_angry .emoji_eyes {
+        position: absolute;
+        left: calc(50% - 6px);
+        top: 70px;
+        width: 12px;height: 12px;
+        border-radius: 50%;
+        box-shadow: 25px 0 0 0 #000000,-25px 0 0 0 #000000;
+    }
+    .emoji_angry .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 18px); 
+        bottom: 15px;
+        width: 36px;height: 18px;
+        background: #000;
+        border-radius: 50%;
+        animation: angry-mouth 2s ease-in 0s infinite;
+    }
+    @keyframes angry-mouth {
+        25%, 50% {height: 6px;bottom: 25px;}
+    }
+
+
+    /* 캔버스 */
+    .canvasBox {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #f0f5f9; border-radius: 50px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    canvas {
+        width: 500px;
+        height: 500px;
+        background-color: white;
+        border-radius: 15px;
+    }
+    .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    button,label {
+        all: unset; /* 버튼의 css 속성이 전부 제거가 됨 */
+        padding: 10px 0px;
+        text-align: center;
+        background-color:#f0f5f9; border: 1px solid #ccc;box-sizing: border-box;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all linear .1s;
+    }
+    button:hover {
+        opacity: 0.85;
+        background-color: #1e2022;
+        color: #52616a;
+        font-weight: 500;
+    }
+
+    .color-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        align-items: center;
+    }
+    .color-option {
+        width: 50px;height: 50px;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 5px solid white; 
+        box-sizing: border-box;
+        transition: transform ease-in-out .1s;
+    }
+    .color-option:hover {
+        transform: scale(1.2);
+    }
+    input#color {
+        background-color: white;
+        border: none;
+        width: 100%;
+    }
+    input#text {
+        all: unset; /* 버튼의 css 속성이 전부 제거가 됨 */
+        padding: 10px 0px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: 500;
+        background-color: white;
+    }
+    input#file {
+        display: none;
+    }
+
+    /* 스킬 */
+    .skillBox{
+        position: flex; justify-content: center;align-items: center;
+        height: 100%;width: 100%;
+        min-height: 100vh;
+    }
+    .skill{
+        position: relative; 
+        display: flex;justify-content: center;align-items: center;flex-wrap: wrap;
+        margin: 0 auto;
+        height: 100%;width: 60%;
+    }
+    .skill .skillList {
+        position: relative; 
+        display: flex;justify-content: center;align-items: center;
+        width: 220px; height: 250px; animation: upup 0.5s ease-out alternate-reverse infinite;
+    }
+    .skill .skillList.upup {
+        animation: upup2 0.5s ease-out alternate-reverse infinite;
+    }
+    @keyframes upup {
+        100% {
+            transform: translateY(-10%);
+        }
+    }
+    @keyframes upup2 {
+        100% {
+            transform: translateY(10%);
+        }
+    }
+    .skill .skillList .percent {
+        position: relative;width: 150px;height: 150px;
+    }
+    .skill .skillList .percent svg {
+        position: relative;width: 150px;height: 150px; transform: rotate(270deg);
+    }
+    .skill .skillList .percent svg circle {
+        width: 100%;height: 100%; 
+        fill: transparent; stroke-width: 4; stroke: #fff;
+        transform: translate(5px,5px);
+
+    }
+    .skill .skillList .percent svg circle:nth-child(2){
+        stroke: var(--clr);
+        stroke-dasharray: 440;
+        stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+        opacity: 0;
+        animation: fadeIn 1s linear forwards ;
+        animation-delay: 2.5s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .dot {
+        position: absolute;
+        inset: 5px;
+        z-index: 10;
+        /* transform: rotate(calc(3.6deg *var(--num))); */
+        animation:animationDot 2s linear forwards;
+    }
+    @keyframes animationDot {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(calc(3.6deg * var(--num)));
+        }
+    }
+    .dot::before{
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;height: 10px;
+        border-radius: 50%;
+        background:  var(--clr);
+        box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);;
+    }
+    .skNumber{
+        position: absolute;
+        inset: 0;
+        display: flex;justify-content: center;align-items: center;flex-direction: column;
+        opacity: 0;
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 2.5s;
+    }
+    .skNumber h2 {
+        display: flex;justify-content: center;align-items: center;color: #1e2022;font-weight: 700;font-size: 1.5em;
+    }
+    .skNumber h2 span {
+        font-weight: 300;
+        color: #000;
+        font-size: 0.5em;
+    } 
+    .percent p {
+        color: #f0f5f9;
+        font-size: 0.5em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+
+    /* 프로필 */
+    .profileBox {width: 100%;height: 100%;}
+    .profileBox .profile {width: 1050px;height: 100%; margin: 0 auto;}
+    .profileBox .profile > .pot {width: 100%;height: 100%; overflow: hidden;display: flex;flex-wrap: wrap;align-content: space-around;align-items: flex-end;}
+    .profileBox .profile > .pot > a > img {object-fit: contain;transform:scale(1);transition: transform .5s;}
+    .profileBox .profile > .pot > a {overflow: hidden;position: relative;transition: opacity 0.3s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(1) {width: 350px;display: inline-block;transition: opacity 0.3s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(2) {width: 350px;display: inline-block;transition: opacity 0.6s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(3) {width: 350px;display: inline-block;transition: opacity 0.9s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(4) {width: 350px;display: inline-block;transition: opacity 1.2s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(5) {width: 350px;display: inline-block;transition: opacity 1.5s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(6) {width: 350px;display: inline-block;transition: opacity 1.8s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:hover > img {transform:scale(1.5); opacity: 0.5;}
+    /* hover text */
+    .profileBox .profile > .pot > a > span {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: #fff;font-size: 30px;opacity: 0;}
+    .profileBox .profile > .pot > a:hover > span {opacity: 1;}
+
+
+    .contact{
+        width: 100%;height: 100%;overflow-x: hidden;
+    }
+    .cover {
+        width: 100vw;
+        margin-bottom: 10rem;
+        display: flex;
+    }
+
+    .cover:nth-child(1) {
+        margin-top: 10vh;
+        transform: rotate(-2deg);
+        background-color: #ff3796;
+    }
+
+    .cover:nth-child(2) {
+        transform: rotate(2deg);
+        background-color: #f0f5f9;
+        justify-content: flex-end;
+    }
+
+    .cover:nth-child(3) {
+        transform: rotate(-2deg);
+        background-color: #1e2022;
+    }
+
+
+    .cover p {
+        display: flex;
+        padding: 3rem 0;
+        font-size: 5rem;
+    }
+
+
+    /* 10 - contact */
+    .contact {position: relative;width: 100%;height: 100%;}
+    .box {
+        position: absolute; left: 50%;top: 50%; transform: translate(-50%,-50%);
+        color: #000;line-height: 1.2;letter-spacing: 2px;
+        text-shadow: 5px 5px 1px #fff;
+    }
+    .box h3 {font-size: 3vw;}
+    .box b {font-size: 1vw;text-shadow: none}
+    .box b em:first-child {margin-right: 3%;box-sizing: border-box; color: #f0f5f9;text-shadow: 1px 1px 1px #000;}
+    /* 배경 */
+    .bubble {position: absolute;width: 100%;height: 100%;}
+    /* 버블 */
+    .bubble div[class^="bubble_"] {position: absolute;width: 1px;height: 1px;background: #1e2022; opacity: 0.5;border-radius: 50%;}
+    @keyframes bubble_movement {
+        0% {
+            transform: translate3d(0,0,0);
+            width: 1px;height: 1px;
+        }
+        100% {
+            transform: translate3d(0,-500px,0);
+            width: 75px;height: 75px;
+        }
+    }
+    .bubble_1   {bottom: 6px;left: 48%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_2   {bottom: 1px;left: 40%;animation: bubble_movement 4s infinite ease-in -0.26s;}
+    .bubble_3   {bottom: 3px;left: 32%;animation: bubble_movement 4s infinite ease-in -1.23s;}
+    .bubble_4   {bottom: 6px;left: 24%;animation: bubble_movement 4s infinite ease-in -0.53s;}
+    .bubble_5   {bottom: 4px;left: 16%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_6   {bottom: 6px;left: 12%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_7   {bottom: 1px;left: 56%;animation: bubble_movement 4s infinite ease-in -1.67s;}
+    .bubble_8   {bottom: 3px;left: 86%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_9   {bottom: 6px;left: 34%;animation: bubble_movement 4s infinite ease-in -1.23s;}
+    .bubble_10  {bottom: 4px;left: 37%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_11  {bottom: 6px;left: 85%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_12  {bottom: 1px;left: 53%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_13  {bottom: 3px;left: 49%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_14  {bottom: 6px;left: 77%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_15  {bottom: 4px;left: 16%;animation: bubble_movement 4s infinite ease-in -3s;}
+    .bubble_16  {bottom: 6px;left: 66%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_17  {bottom: 1px;left: 32%;animation: bubble_movement 4s infinite ease-in -1.78s;}
+    .bubble_18  {bottom: 3px;left: 73%;animation: bubble_movement 4s infinite ease-in -1.18s;}
+    .bubble_19  {bottom: 6px;left: 62%;animation: bubble_movement 4s infinite ease-in -0.52s;}
+    .bubble_20  {bottom: 4px;left: 23%;animation: bubble_movement 4s infinite ease-in -2.78s;}
+    .bubble div[class^="bubble_"]::after {
+        content: ''; 
+        position: absolute; left: 50%;top: 50%;
+        width: 85%;height: 85%; 
+        border-radius: 50%;
+        border-top: 1px solid hsla(248, 20%, 84%, 0.861);
+        transform: translate3d(-50%,-50%,0) rotateZ(-45deg);
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .screen section {
+        width: 100%;
+        height: 100vh;
+        background-color: #c9d6de;
+        font-size: 2vw;
+        display: flex;justify-content: space-evenly;align-items: center; 
+        opacity: 0;
+        transition: all 5s;
+    }
+    .screen section ul {
+        background-color: #fff;
+        width: 70%;
+    }
+
+    /* PROJECT LIST */
+    .main-content-1 {width: 100%;height: 500vh;}
+    .sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .sticky-background {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8vw;
+    }
+    .card-frame {
+        position: absolute;
+        width:95vw;
+        height: 30vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card {
+        width: 24%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        transform-style: preserve-3d;
+        position: relative;
+        transform: perspective(100vw)
+        translateX(100vw) 
+        rotateY(180deg);
+        transition: transform 0.1s;
+    }
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 1vw;
+        overflow: hidden;
+        backface-visibility: hidden;
+    }
+    .front {
+        background-color: #FFF;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .project_box{
+        background-color: yellow;
+        display: flex; flex-direction: column;
+        width: 100%;height: 100%;
+    }
+    /* 이미지 */
+    .project_box > .img {
+    background-color: #c9d6de;width: 100%;height: 80%; overflow-y: scroll;
+    }
+    .project_box > .img::-webkit-scrollbar {
+        width: 10px;
+    }
+    .project_box > .img::-webkit-scrollbar-thumb {
+        background-color: #f0f5f9; border-radius: 50px;
+    }
+    .project_box > .img::-webkit-scrollbar-track {
+        background-color: rgba(223, 218, 218, 0.324);
+        border-radius: 10px;
+    }
+    /* 제목 */
+    .project_box .hed {
+        background-color: #f0f5f9;width: 100%;height: 10%;
+    }
+    .project_box .hed h2 {
+        width: 100%;height: 100%;
+        font-size: 15px; color: #c9d6de; text-shadow: 1px 1px 1px #3B3A38;
+        display: flex;flex-direction: row; justify-content: center; align-items: center;
+        transition: color ease 0.5s;
+        opacity: 0.5;animation: top 2s alternate 1s infinite;
+    }
+    @keyframes top {
+        0%{top: 120px;transform: translate(0px);}
+        50%{top: 120px;transform: translate(-5px);}
+        100%{top: 10px;transform: translate(5px);}
+    }
+    /* 버튼 */
+    .project_box > .btn {
+        background-color: #f0f5f9;width: 100%;height: 10%;
+        font-size: 15px;
+    }
+    .project_box > .btn span {
+        width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-around; align-items: center;
+    }
+    .project_box > .btn span a {
+        color: #c9d6de;text-shadow: 1px 1px 1px #3B3A38;
+    }
+    .project_box > .btn span a:hover {
+        color: #3B3A38;text-shadow: 1px 1px 1px #c9d6de;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        background-color: #c9d6de;
+        background-image: repeating-linear-gradient(0deg, #1e2022, #1e2022 33.3%, #ffffff00 0px, #ffffff00 67%);
+        background-size: 100%;
+    }
+
+    @media screen and (orientation:portrait) {
+        .card-frame {
+            display: grid;
+            height: initial;
+            width: initial;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2vw;
+            justify-items: center;
+        }
+
+        .card {
+            font-size: 20vw;
+            width: 35vw;
+            height: 50vw;
+        }
+    }
+
+
+
+
+
+    /* react (movie , kakao) */
+    .react {width: 100%;height: 100%;display: flex;flex-direction: column;}
+    .react > .tit {width: 100%;height: 20%;}
+    .react > .tit > div {text-align: left;}
+    .react > .tit > div p {display: none;text-align: center;font-size: 2rem; margin-top: 3%;box-sizing: border-box;}
+    .react > .tit > div p:nth-of-type(1),.react > .tit > div p:nth-of-type(2) {display: block;color: #1e2022;}
+
+    .react > .movie_kakao {width: 100%;height: 80%;display: flex;}
+    .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;flex-direction: column;margin-top: -5%;box-sizing: border-box;}
+    .react > .movie_kakao > div > .movie {width: 100%;height: 50%;position: relative;}
+    .react > .movie_kakao > div > .kakao {width: 100%;height: 50%;position: relative;}
+    .react > .movie_kakao > div > div > .imgbox {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);}
+    .react > .movie_kakao > div > div > .imgbox > div { 
+        display: flex; flex-direction: column;
+        border: 2px solid #ccc; 
+        border-radius: 20px 20px 0 0;
+        transition: transform 0.3s ease-in-out 0s;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div {transform: scale(1.1);}
+    .react > .movie_kakao > div > div > .imgbox > div > header {
+        display: flex;
+        height: 40px; width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px 20px 0 0;
+    }
+    .react > .movie_kakao > div > div > .imgbox > div > header > i {
+        font-size: 30px; text-align: center; color: #999; 
+        width: 10%;
+        padding-top: 5px;
+        transition: color 0.3s ease-in 0s;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div > header > i {
+        color: #ccc;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div::after {color: #333;}
+    .react > .movie_kakao > div > div > .imgbox > div > header > span {
+        background:#c9d6de;
+        color: #f0f5f9; text-shadow: 2px 2px 1px #ccc; 
+        letter-spacing: 5px; font-size: 18px;
+        border-radius: 10px;
+        width: 55%;height: 70%;
+        margin-top: 5px;box-sizing: border-box;
+        padding-left: 5%; 
+    }
+    .react > .movie_kakao > div > div > .imgbox > div > img {
+        width: 100%; 
+        object-fit: cover;
+    }
+    .react > .movie_kakao > div > div > .imgbox > div::after {
+        content: 'click'; 
+        display: block;
+        width: 100%;height: 40px;
+        background:#f0f5f9; 
+        text-align: center; font-size: 18px; letter-spacing: 3px;
+        padding-top: 8px;
+        box-sizing: border-box;
+        transition: color 0.3s ease-in-out 0s;
+    }
+
+    /* 이모지 */
+    .pure_container {width: 100%;height: 100%;display: flex;flex-direction: column;}
+    .pure_container > .pure {width: 100%;height: 30%;}
+    .pure_container > .pure > .pure_tit {color: #000;font-size: 2rem;letter-spacing: 2px;line-height: 2.5;margin-top: 3%;box-sizing: border-box;}
+    .pure_container > .pure > .pure_tit p:last-child{font-size: 1rem;color: #f0f5f9;text-shadow: 1px 1px 1px #000;}
+
+    .pure_container > .pure_box {width: 100%;height: 35%;font-size: 1rem;}
+    .pure_container > .pure_box > ul {display: flex;flex-direction: row;align-items: center; width: 50%;height: 80%; margin: 0 auto;border-radius: 20px;border: dotted 1px #f0f5f9; background-color: #c9d6de;box-sizing: border-box;}
+    .pure_container > .pure_box > ul > li {width: 100%; letter-spacing: 2px;line-height: 2; color: #1e2022;}
+    .pure_container > .pure_box > ul > li > ul {width: 100%; color: #c9d6de;}
+
+    .pure_container > .purezone_box {width: 100%;height: 35%; position: relative;}
+    .pure_container > .purezone_box > .purezone {position: absolute;position: relative;width: 400px;height: 200px;margin: 0 auto;}
+    .pure_container > .purezone_box > .purezone > i {position: absolute; z-index: 5; cursor: pointer;transition: all 0.3s ease 0s;text-align: left;top: 60px;font-size: 80px; color: #f0f5f9;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(2) {right: 0;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(1) {left: 0;}
+    .pure_container > .purezone_box > .purezone > i:hover {color: #000;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(2):active {transform: translate(3px, 3px);}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(1):active {transform: translate(-3px, 3px);}
+    .pure_container > .purezone_box > .purezone > div {position: absolute; width: 100%;height: 100%;left: 0;top: 0;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure {position: absolute;width: 200px;height:200px;left: 50%;transform: translateX(-50%);top: 0;text-align: center;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure > .emoji {position: absolute;left: 12%; top: 10%;display: none;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure > .emoji:nth-of-type(1) {display: block;}
+    /* 페이스북 이모지 */
+    .emoji {
+        position: relative;
+        display: inline-block; 
+        width: 120px;height: 120px;
+        border-radius: 50%;
+        margin: 15px 15px 15px;
+        background: #ffda6a;
+    }
+    /* emoji emoji_like*/
+    .emoji_like {
+        background: #548dff;
+        top: 0px;
+    }
+    .emoji_like .emoji_hand {
+        position: absolute;
+        left: 25px;bottom: 30px;
+        width: 20px;height: 40px;
+        background: #fff;
+        border-radius: 5px;
+        animation: hands-up 2s linear 0s infinite;
+    }
+    @keyframes hands-up {
+        25% {transform: rotate(15deg);}
+        50% {transform: rotate(-15deg) translateY(-10px);}
+        75%,100% {transform: rotate(0deg);}
+    }
+
+    .emoji_like .emoji_hand::before {
+        content: "";
+        position: absolute;
+        left: 25px;bottom: 5px; 
+        width: 40px;height: 10px;
+        background: #fff;
+        border-radius: 2px 10px 10px 2px;
+        box-shadow: 1px -9px 0 1px #fff,2px -19px 0 2px #fff,3px -29px 0 3px #fff;
+    }
+    .emoji_like .emoji_thumb {
+        position: absolute; 
+        right: -25px;top: -25px;
+        border-bottom: 20px solid #fff;
+        border-left: 20px solid transparent; 
+        transform: rotate(5deg);
+        transform-origin: 0 100%;
+        animation: thumb-up 2s linear 0s infinite;
+    }
+    @keyframes thumb-up {
+        25% {transform: rotate(20deg);}
+        50%, 100% {transform: rotate(5deg);}
+    }
+    .emoji_like .emoji_thumb::before {
+        content: '';
+        position: absolute;
+        left: -9.7px;top: -9px;
+        width: 10px;height: 12px;
+        background: #fff;
+        border-radius: 50% 50% 0 0;
+        box-decoration-break: -1px 4px 0 0 #fff;
+        transform: rotate(-14deg);
+        transform-origin: 100% 100% 
+    }
+    /* emoji_love */
+    .emoji_love {
+        background: #f00; 
+        top: 0;
+    }
+    .emoji_love .emoji_heart {
+        position: absolute; 
+        left: 50%;top: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        width: 80px;height: 80px;
+        /* border: 1px solid #000; */
+        animation: heart-beat 1s linear infinite alternate;
+    }
+    @keyframes heart-beat {
+        25% {transform: scale(1.1);}
+        75% {transform: 0.6;}
+    }     
+    .emoji_heart::before, .emoji_heart::after {
+        content: '';
+        position: absolute;
+        left: 50%;top: 50%;
+        width: 40px;height: 64px;
+        margin-left: -20px;
+        margin-top: -32px;
+        background: #fff;
+        border-radius: 20px 20px 0 0;
+    }
+    .emoji_heart::before {
+        transform-origin: 0 100%;
+        transform:translateX(20px) rotate(-45deg);
+    }
+    .emoji_heart::after {
+        transform-origin: 100% 100%;
+        transform: translateX(-20px) rotate(45deg);
+    }
+    /* emoji emoji_haha */
+    .emoji.emoji_haha {top: 0;}
+    .emoji_haha .emoji_face {
+        position: absolute;
+        width: 100%; height: inherit; /* border: 1px solid #f00; */
+        animation:haha-face 2s linear infinite normal ;
+    }
+    @keyframes haha-face{
+        10% {transform: translateY(25px);}
+        20% {transform: translateY(15px);}
+
+        30% {transform: translateY(25px);}
+        20% {transform: translateY(15px);}
+
+        50% {transform: translateY(25px);}
+
+        60% {transform: translateY(0px);}
+        70% {transform: translateY(-10px);}
+
+        80% {transform: translateY(0px);}
+        90% {transform: translateY(-10px);}
+
+    }
+    .emoji_haha .emoji_eyes {
+        position: absolute; 
+        left: 50%;top: 35px;
+        margin-left: -13px;
+        width: 26px;height: 6px;
+        border-radius: 2px;
+        /* background: #fff; */
+        box-shadow: -25px 5px 0 0 #000,25px -5px 0 0 #000;
+        transform: rotate(20deg);
+    }
+    .emoji_haha .emoji_eyes::after {
+        content: "";
+        position: absolute;
+        left: 0;top: 0;
+        width: 26px;height: 6px;
+        border-radius: 2px;
+        box-shadow: -25px -5px 0 0 #000,25px 5px 0 0 #000;
+        transform: rotate(-40deg);
+    }    
+    .emoji_haha .emoji_mouth {
+        overflow: hidden;
+        position: absolute;
+        left: 50%;top: 50%;
+        width: 80px; height: 40px;
+        margin-left: -40px;
+        background: #000;
+        border-radius: 0 0 40px 40px;
+        animation: haha-mouth 2s linear infinite normal;
+    }
+                
+    @keyframes haha-mouth{
+        10% {transform:scale(0.6);top:45px;}
+        20% {transform:scale(0.8);top:45px;}
+
+        30% {transform:scale(0.6);top:45px;}
+        40% {transform:scale(0.8);top:45px;}
+
+        50% {transform:scale(0.6);top:45px;}
+
+        60% {transform:scale(1);top:50px;}
+        70% {transform:scale(1.2);top:50px;}
+
+        80% {transform:scale(1);top:50px;}
+        90% {transform:scale(1.1);top:50px;}
+    }         
+    .emoji_haha .emoji_tongue {
+        position: absolute;
+        left: 50%;bottom: -10px;
+        width: 70px;height: 30px;
+        margin-left: -35px;
+        background: #f55064;
+        border-radius: 50%;
+    }      
+    /* yay */
+    .emoji.emoji_yay {
+        top: 0;
+    }
+    .emoji_yay .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: yay 1s linear infinite alternate;
+    }
+    @keyframes yay{
+        25% {transform: rotate(-15deg);}
+        75% {transform: rotate(15deg);}
+    }    
+    .emoji_yay .emoji_eyebrows {
+        position: absolute; 
+        left: calc(50% - 3px);
+        top: 30px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -6px 0 0 0 #000,-36px 0 0 0 #000000,6px 0 0 0 #000,36px 0 0 0px;
+    }          
+    .emoji_yay .emoji_eyebrows::before,.emoji_yay .emoji_eyebrows::after {
+        content: ""; 
+        position: absolute; 
+        left: calc(50% - 18px);
+        bottom: 3px;
+        width: 36px;height: 18px; 
+        border-radius: 60px 60px 0 0;
+        border:6px solid #000;
+        border-bottom: 0;
+        box-sizing: border-box;
+    }
+    .emoji_yay .emoji_eyebrows::before {
+        margin-left: -21px;
+    } 
+    .emoji_yay .emoji_eyebrows::after {
+        margin-left: 21px;
+    }
+    .emoji_yay .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 3px);
+        top:60px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        /* background: #f00; */
+        box-shadow: -25px 0 0 0 #000,25px 0 0 0 #000
+        ,-35px 2px 30px 10px #D5234C,
+        35px -2px 30px 10px #D5234C;
+    }
+    .emoji_yay .emoji_mouth::after {
+        content: ''; 
+        position: absolute;
+        left: calc(50% - 40px); 
+        top: -64px;
+        width: 80px; height: 80px;
+        border-radius: 50%;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }    
+    /* wow */
+    .emoji.emoji_wow {
+        top: 0; left: 0px;
+    }
+    .emoji_wow .emoji_face {
+        position: absolute; 
+        width: 100%;height: inherit;
+        animation: wow-face 3s linear 0s infinite;
+    }
+    @keyframes wow-face {
+        15%,25% {transform: rotate(20deg) translateX(-25px);}
+        45%,65% {transform: rotate(-20deg) translateX(25px);}
+        75%,100% {transform: rotate(0deg) translateX(0px);}
+    }
+    .emoji_wow .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        /* background: #fff; */
+        box-shadow: -18px 0 0 0 #000, -33px 0 0 0 #000, 18px 0 0 0 #000, 33px 0 0 0 #000;
+        animation:wow-brow 3s linear 0s infinite;
+    }
+    @keyframes wow-brow {
+        15%,65% {top: 25px;}
+        75%,100%,0% {top:15px}
+    }
+    .emoji_wow .emoji_eyebrows::before, .emoji_wow .emoji_eyebrows::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 12px);
+        top: -3px;
+        width: 24px;height: 20px;
+        border-radius: 50%;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_wow .emoji_eyebrows::before {
+        margin-left: -25px;
+    } 
+    .emoji_wow .emoji_eyebrows::after {
+        margin-left: 25px;
+    }    
+    .emoji_wow .emoji_eyes {
+        position: absolute;
+        left: calc(50% - 8px);
+        top: 35px;
+        width: 16px;height: 24px;
+        border-radius: 50%; 
+        /* background: #f00; */
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+    .emoji_wow .emoji_tongue {
+        position: absolute;
+        left: calc(50% - 15px);
+        top: 50%;
+        width: 30px;height: 45px;
+        border-radius: 50%;
+        background: #000;
+        animation:wow-mouth 3s linear 0s infinite;
+    }
+    @keyframes wow-mouth {
+        10%,30% {width: 20px;height: 20px;left: calc(50% - 10px);}
+        50%,70% {width: 30px;height: 40px;left: calc(50% - 15px);}
+        75%,100% {height: 50px;}
+    }
+    /* emoji emoji_sad */
+    .emoji.emoji_sad {
+        top: 0; left: 0;
+    }
+    .emoji_sad .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: sad-face 2s ease-in 0s infinite;
+    }
+    @keyframes sad-face {
+        25%, 35% {top: -15px;}
+        55%, 95% {top: 10px;}
+        100%, 0% {top: 0px;}
+    }
+    .emoji_sad .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 35px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -40px 9px 0 0 #000,-25px 0 0 0 #000, 25px 0 0 0 #000,40px 9px 0 0 #000;
+    }
+    .emoji_sad .emoji_eyebrows::before , .emoji_sad .emoji_eyebrows::after {
+        content: ''; 
+        position: absolute;
+        left: calc(50% - 15px);
+        top: 2px;
+        width: 30px;height: 20px;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border-left-color: transparent; 
+        border-right-color: transparent; 
+        border-bottom-color: transparent;
+    }
+    .emoji_sad .emoji_eyebrows::before {
+        margin-left: -30px;
+        transform: rotate(-30deg);
+    }
+    .emoji_sad .emoji_eyebrows::after {
+        margin-left: 30px;
+        transform: rotate(30deg);
+    }
+    .emoji_sad .emoji_eyes { 
+        position: absolute;
+        left: calc(50% - 7px);
+        top: 50px;
+        width: 14px;height: 16px;
+        border-radius: 50%; 
+        /* background: #f00; */
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+    .emoji_sad .emoji_eyes::after {
+        content: '';
+        position: absolute;
+        width: 12px;height: 12px;
+        margin-left: 6px;
+        background: #548dff;
+        border-radius: 0 100% 40% 50% / 0 50% 40% 100%;
+        transform-origin: 0% 0%;
+        animation:tear-drop 2s ease-in infinite ;
+    }
+    @keyframes tear-drop{
+        0%,100% {
+            display: block;left: 35px;top: 15px;
+            transform: rotate(45deg) scale(0);
+        }
+        25% {
+            display: block;left: 35px;
+            transform: rotate(45deg) scale(2);
+        }
+        49.9% {
+            display: block;left: 35px;top: 65px;
+            transform: rotate(45deg) scale(0);
+        }
+        50% {
+            display: block;left: -35px;top: 15px;
+            transform: rotate(45deg) scale(0);
+        }
+        75% {
+            display: block;left: -35px;top: 15px;
+            transform: rotate(45deg) scale(2);
+        }
+        99.9% {
+            display: block;left: -35px;top: 65px;
+            transform: rotate(45deg) scale(0);
+        }
+    }
+
+    .emoji_sad .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 90px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -18px 0 0 0 #000,18px 0 0 0 #000;
+    }
+    .emoji_sad .emoji_mouth::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 30px);
+        top: -10px;
+        width: 60px;height: 80px;
+        box-sizing: border-box;
+        border: 6px solid #000;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    /* angry */
+    .emoji.emoji_angry {
+        top: 0; left: -0;
+    }
+    .emoji_angry {
+        background: linear-gradient(to bottom, #D5234C -10%,#FFDA6A 100%);
+        background-size: 100%;
+    }
+    .emoji_angry .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: angry-face 2s ease-in 0s infinite;
+    }
+    @keyframes angry-face {
+        35%,60% {transform: translateX(0) translateY(10px) scale(0.9);}
+        40% {transform: translateX(-5px) translateY(10px) scale(0.9);}
+        45% {transform: translateX(5px) translateY(10px) scale(0.9);}
+        50% {transform: translateX(-5) translateY(10px) scale(0.9);}
+        55% {transform: translateX(5) translateY(10px) scale(0.9);}
+    }
+    .emoji_angry .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 55px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -44px 5px 0 0 #000000,-7px 16px 0 0 #000000, 7px 16px 0 0 #000000,44px 5px 0 0 #000000;
+    }
+    .emoji_angry .emoji_eyebrows::before, .emoji_angry .emoji_eyebrows::after {
+        content: ''; 
+        position: absolute; 
+        left: calc(50% - 25px);
+        top: 0;
+        width: 50px;height: 20px;
+        border: 6px solid #000000;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_angry .emoji_eyebrows::before {
+        margin-left: -25px;
+        transform: rotate(15deg);
+    } 
+    .emoji_angry .emoji_eyebrows::after {
+        margin-left: 25px;
+        transform: rotate(-15deg);
+    }                            
+    .emoji_angry .emoji_eyes {
+        position: absolute;
+        left: calc(50% - 6px);
+        top: 70px;
+        width: 12px;height: 12px;
+        border-radius: 50%;
+        box-shadow: 25px 0 0 0 #000000,-25px 0 0 0 #000000;
+    }
+    .emoji_angry .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 18px); 
+        bottom: 15px;
+        width: 36px;height: 18px;
+        background: #000;
+        border-radius: 50%;
+        animation: angry-mouth 2s ease-in 0s infinite;
+    }
+    @keyframes angry-mouth {
+        25%, 50% {height: 6px;bottom: 25px;}
+    }
+
+
+    /* 캔버스 */
+    .canvasBox {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #f0f5f9; border-radius: 50px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    canvas {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        border-radius: 15px;
+    }
+    .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    button,label {
+        all: unset; /* 버튼의 css 속성이 전부 제거가 됨 */
+        padding: 10px 0px;
+        text-align: center;
+        background-color:#f0f5f9; border: 1px solid #ccc;box-sizing: border-box;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all linear .1s;
+    }
+    button:hover {
+        opacity: 0.85;
+        background-color: #1e2022;
+        color: #52616a;
+        font-weight: 500;
+    }
+
+    .color-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        align-items: center;
+    }
+    .color-option {
+        width: 50px;height: 50px;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 5px solid white; 
+        box-sizing: border-box;
+        transition: transform ease-in-out .1s;
+    }
+    .color-option:hover {
+        transform: scale(1.2);
+    }
+    input#color {
+        background-color: white;
+        border: none;
+        width: 100%;
+    }
+    input#text {
+        all: unset; /* 버튼의 css 속성이 전부 제거가 됨 */
+        padding: 10px 0px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: 500;
+        background-color: white;
+    }
+    input#file {
+        display: none;
+    }
+
+    /* 스킬 */
+    .skillBox{
+        position: flex; justify-content: center;align-items: center;
+        height: 100%;width: 100%;
+        min-height: 100vh;
+    }
+    .skill{
+        position: relative; 
+        display: flex;justify-content: center;align-items: center;flex-wrap: wrap;
+        margin: 0 auto;
+        height: 100%;width: 100%;
+    }
+    .skill .skillList {
+        position: relative; 
+        display: flex;justify-content: center;align-items: center;
+        width: 200px; height: 250px;
+    }
+    .skill .skillList .percent {
+        position: relative;width: 150px;height: 150px;
+    }
+    .skill .skillList .percent svg {
+        position: relative;width: 150px;height: 150px; transform: rotate(270deg);
+    }
+    .skill .skillList .percent svg circle {
+        width: 100%;height: 100%; 
+        fill: transparent; stroke-width: 4; stroke: #fff;
+        transform: translate(5px,5px);
+
+    }
+    .skill .skillList .percent svg circle:nth-child(2){
+        stroke: var(--clr);
+        stroke-dasharray: 440;
+        stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+        opacity: 0;
+        animation: fadeIn 1s linear forwards ;
+        animation-delay: 2.5s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .dot {
+        position: absolute;
+        inset: 5px;
+        z-index: 10;
+        /* transform: rotate(calc(3.6deg *var(--num))); */
+        animation:animationDot 2s linear forwards;
+    }
+    @keyframes animationDot {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(calc(3.6deg * var(--num)));
+        }
+    }
+    .dot::before{
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;height: 10px;
+        border-radius: 50%;
+        background:  var(--clr);
+        box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);;
+    }
+    .skNumber{
+        position: absolute;
+        inset: 0;
+        display: flex;justify-content: center;align-items: center;flex-direction: column;
+        opacity: 0;
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 2.5s;
+    }
+    .skNumber h2 {
+        display: flex;justify-content: center;align-items: center;color: #1e2022;font-weight: 700;font-size: 1.5em;
+    }
+    .skNumber h2 span {
+        font-weight: 300;
+        color: #000;
+        font-size: 0.5em;
+    } 
+    .percent p {
+        color: #f0f5f9;
+        font-size: 0.5em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+
+    /* 프로필 */
+    .profileBox {width: 100%;height: 100%;}
+    .profileBox .profile {width: 100%;height: 100%;}
+    .profileBox .profile > .pot {width: 100%; overflow: hidden;display: flex;flex-wrap: wrap;align-items: center;}
+    .profileBox .profile > .pot > a > img {width: 100%; object-fit: contain;transform:scale(1);transition: transform .5s;}
+    .profileBox .profile > .pot > a {overflow: hidden;position: relative;transition: opacity 0.3s ease-in-out 0s;margin: 0 auto; width: 400px;height: 400px;}
+    .profileBox .profile > .pot > a:nth-of-type(1) {display: none;}
+    .profileBox .profile > .pot > a:nth-of-type(2) {display: none;}
+    .profileBox .profile > .pot > a:nth-of-type(3) {width: 350px;display: inline-block;transition: opacity 0.9s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(4) {width: 350px;display: inline-block;transition: opacity 1.2s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(5) {width: 350px;display: inline-block;transition: opacity 1.5s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:nth-of-type(6) {width: 350px;display: inline-block;transition: opacity 1.8s ease-in-out 0s;}
+    .profileBox .profile > .pot > a:hover > img {transform:scale(1.5); opacity: 0.5;}
+    /* hover text */
+    .profileBox .profile > .pot > a > span {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: #fff;font-size: 30px;opacity: 0;}
+    .profileBox .profile > .pot > a:hover > span {opacity: 1;}
+
+
+    .contact{
+        width: 100%;height: 100%;overflow-x: hidden;
+    }
+    .cover {
+        width: 100vw;
+        margin-bottom: 10rem;
+        display: flex;
+    }
+
+    .cover:nth-child(1) {
+        margin-top: 10vh;
+        transform: rotate(-2deg);
+        background-color: #ff3796;
+    }
+
+    .cover:nth-child(2) {
+        transform: rotate(2deg);
+        background-color: #f0f5f9;
+        justify-content: flex-end;
+    }
+
+    .cover:nth-child(3) {
+        transform: rotate(-2deg);
+        background-color: #1e2022;
+    }
+
+
+    .cover p {
+        display: flex;
+        padding: 3rem 0;
+        font-size: 5rem;
+    }
+
+
+    /* 10 - contact */
+    .contact {position: relative;width: 100%;height: 100%;}
+    .box {
+        position: absolute; left: 50%;top: 50%; transform: translate(-50%,-50%);
+        color: #000;line-height: 1.2;letter-spacing: 2px;
+        text-shadow: 5px 5px 1px #fff;
+    }
+    .box h3 {font-size: 3vw;}
+    .box b {font-size: 1vw;text-shadow: none}
+    .box b em:first-child {margin-right: 3%;box-sizing: border-box; color: #f0f5f9;text-shadow: 1px 1px 1px #000;}
+    /* 배경 */
+    .bubble {position: absolute;width: 100%;height: 100%;}
+    /* 버블 */
+    .bubble div[class^="bubble_"] {position: absolute;width: 1px;height: 1px;background: #1e2022; opacity: 0.5;border-radius: 50%;}
+    @keyframes bubble_movement {
+        0% {
+            transform: translate3d(0,0,0);
+            width: 1px;height: 1px;
+        }
+        100% {
+            transform: translate3d(0,-500px,0);
+            width: 75px;height: 75px;
+        }
+    }
+    .bubble_1   {bottom: 6px;left: 48%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_2   {bottom: 1px;left: 40%;animation: bubble_movement 4s infinite ease-in -0.26s;}
+    .bubble_3   {bottom: 3px;left: 32%;animation: bubble_movement 4s infinite ease-in -1.23s;}
+    .bubble_4   {bottom: 6px;left: 24%;animation: bubble_movement 4s infinite ease-in -0.53s;}
+    .bubble_5   {bottom: 4px;left: 16%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_6   {bottom: 6px;left: 12%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_7   {bottom: 1px;left: 56%;animation: bubble_movement 4s infinite ease-in -1.67s;}
+    .bubble_8   {bottom: 3px;left: 86%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_9   {bottom: 6px;left: 34%;animation: bubble_movement 4s infinite ease-in -1.23s;}
+    .bubble_10  {bottom: 4px;left: 37%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_11  {bottom: 6px;left: 85%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_12  {bottom: 1px;left: 53%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_13  {bottom: 3px;left: 49%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_14  {bottom: 6px;left: 77%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_15  {bottom: 4px;left: 16%;animation: bubble_movement 4s infinite ease-in -3s;}
+    .bubble_16  {bottom: 6px;left: 66%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_17  {bottom: 1px;left: 32%;animation: bubble_movement 4s infinite ease-in -1.78s;}
+    .bubble_18  {bottom: 3px;left: 73%;animation: bubble_movement 4s infinite ease-in -1.18s;}
+    .bubble_19  {bottom: 6px;left: 62%;animation: bubble_movement 4s infinite ease-in -0.52s;}
+    .bubble_20  {bottom: 4px;left: 23%;animation: bubble_movement 4s infinite ease-in -2.78s;}
+    .bubble div[class^="bubble_"]::after {
+        content: ''; 
+        position: absolute; left: 50%;top: 50%;
+        width: 85%;height: 85%; 
+        border-radius: 50%;
+        border-top: 1px solid hsla(248, 20%, 84%, 0.861);
+        transform: translate3d(-50%,-50%,0) rotateZ(-45deg);
+    }
+}
+@media screen and (max-width:767px) {
+    .screen section {
+        width: 100%;
+        height: 100vh;
+        background-color: #c9d6de;
+        font-size: 2vw;
+        display: flex;justify-content: space-evenly;align-items: center; 
+        opacity: 0;
+        transition: all 5s;
+    }
+    .screen section ul {
+        background-color: #fff;
+        width: 70%;
+    }
+
+    /* PROJECT LIST */
+    .main-content-1 {width: 100%;height: 500vh;}
+    .sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .sticky-background {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8vw;
+    }
+    .card-frame {
+        position: absolute;
+        width:95vw;
+        height: 30vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card {
+        width: 24%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        transform-style: preserve-3d;
+        position: relative;
+        transform: perspective(100vw)
+        translateX(100vw) 
+        rotateY(180deg);
+        transition: transform 0.1s;
+    }
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 1vw;
+        overflow: hidden;
+        backface-visibility: hidden;
+    }
+    .front {
+        background-color: #FFF;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .project_box{
+        background-color: yellow;
+        display: flex; flex-direction: column;
+        width: 100%;height: 100%;
+    }
+    /* 이미지 */
+    .project_box > .img {
+    background-color: #c9d6de;width: 100%;height: 80%; overflow-y: scroll;
+    }
+    .project_box > .img::-webkit-scrollbar {
+        width: 10px;
+    }
+    .project_box > .img::-webkit-scrollbar-thumb {
+        background-color: #f0f5f9; border-radius: 50px;
+    }
+    .project_box > .img::-webkit-scrollbar-track {
+        background-color: rgba(223, 218, 218, 0.324);
+        border-radius: 10px;
+    }
+    /* 제목 */
+    .project_box .hed {
+        background-color: #f0f5f9;width: 100%;height: 10%;
+    }
+    .project_box .hed h2 {
+        width: 100%;height: 100%;
+        font-size: 12px; color: #c9d6de; text-shadow: 1px 1px 1px #3B3A38;
+        display: flex;flex-direction: row; justify-content: center; align-items: center;
+        transition: color ease 0.5s;
+        opacity: 0.5;animation: top 2s alternate 1s infinite;
+    }
+    @keyframes top {
+        0%{top: 120px;transform: translate(0px);}
+        50%{top: 120px;transform: translate(-5px);}
+        100%{top: 10px;transform: translate(5px);}
+    }
+    /* 버튼 */
+    .project_box > .btn {
+        background-color: #f0f5f9;width: 100%;height: 10%;
+        font-size: 12px;
+    }
+    .project_box > .btn span {
+        width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-around; align-items: center;
+    }
+    .project_box > .btn span a {
+        color: #c9d6de;text-shadow: 1px 1px 1px #3B3A38;
+    }
+    .project_box > .btn span a:hover {
+        color: #3B3A38;text-shadow: 1px 1px 1px #c9d6de;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        background-color: #c9d6de;
+        background-image: repeating-linear-gradient(0deg, #1e2022, #1e2022 33.3%, #ffffff00 0px, #ffffff00 67%);
+        background-size: 100%;
+    }
+
+    @media screen and (orientation:portrait) {
+        .card-frame {
+            display: grid;
+            height: initial;
+            width: initial;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2vw;
+            justify-items: center;
+        }
+
+        .card {
+            font-size: 20vw;
+            width: 35vw;
+            height: 50vw;
+        }
+    }
+
+
+
+
+
+    /* react (movie , kakao) */
+    .react {width: 100%;height: 100%;display: flex;flex-direction: column;}
+    .react > .tit {width: 100%;height: 10%;}
+    .react > .tit > div {text-align: left;}
+    .react > .tit > div p {display: none;text-align: center;font-size: 1.5rem; margin-top: 5%;box-sizing: border-box;}
+    .react > .tit > div p:nth-of-type(1),.react > .tit > div p:nth-of-type(2) {display: block;color: #1e2022;}
+
+    .react > .movie_kakao {width: 100%;height: 90%;display: flex;}
+    .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;flex-direction: column;margin-top: -5%;box-sizing: border-box;}
+    .react > .movie_kakao > div > .movie {width: 100%;height: 50%;position: relative;}
+    .react > .movie_kakao > div > .kakao {width: 100%;height: 50%;position: relative;}
+    .react > .movie_kakao > div > div > .imgbox {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);}
+    .react > .movie_kakao > div > div > .imgbox > div { 
+        display: flex; flex-direction: column;
+        border: 2px solid #ccc; 
+        border-radius: 20px 20px 0 0;
+        transition: transform 0.3s ease-in-out 0s;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div {transform: scale(1.1);}
+    .react > .movie_kakao > div > div > .imgbox > div > header {
+        display: flex;
+        height: 40px; width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px 20px 0 0;
+    }
+    .react > .movie_kakao > div > div > .imgbox > div > header > i {
+        font-size: 20px; text-align: center; color: #999; 
+        width: 10%;
+        padding-top: 5px;
+        transition: color 0.3s ease-in 0s;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div > header > i {
+        color: #ccc;
+    }
+    .react > .movie_kakao > div > div > .imgbox:hover > div::after {color: #333;}
+    .react > .movie_kakao > div > div > .imgbox > div > header > span {
+        background:#c9d6de;
+        color: #f0f5f9; text-shadow: 2px 2px 1px #ccc; 
+        letter-spacing: 5px; font-size: 12px;
+        border-radius: 10px;
+        width: 55%;height: 50%;
+        margin-top: 5px;box-sizing: border-box;
+        padding-left: 5%; 
+    }
+    .react > .movie_kakao > div > div > .imgbox > div > img {
+        width: 100%; 
+        object-fit: cover;
+    }
+    .react > .movie_kakao > div > div > .imgbox > div::after {
+        content: 'click'; 
+        display: block;
+        width: 100%;height: 40px;
+        background:#f0f5f9; 
+        text-align: center; font-size: 18px; letter-spacing: 3px;
+        padding-top: 8px;
+        box-sizing: border-box;
+        transition: color 0.3s ease-in-out 0s;
+    }
+
+    /* 이모지 */
+    .pure_container {width: 100%;height: 100%;display: flex;flex-direction: column;}
+    .pure_container > .pure {width: 100%;height: 30%;}
+    .pure_container > .pure > .pure_tit {color: #000;font-size: 2rem;letter-spacing: 2px;line-height: 2.5;margin-top: 3%;box-sizing: border-box;}
+    .pure_container > .pure > .pure_tit p:last-child{font-size: 1rem;color: #f0f5f9;text-shadow: 1px 1px 1px #000;}
+
+    .pure_container > .pure_box {width: 100%;height: 35%;font-size: 1rem;}
+    .pure_container > .pure_box > ul {display: flex;flex-direction: row;align-items: center; width: 50%;height: 80%; margin: 0 auto;border-radius: 20px;border: dotted 1px #f0f5f9; background-color: #c9d6de;box-sizing: border-box;}
+    .pure_container > .pure_box > ul > li {width: 100%; letter-spacing: 2px;line-height: 2; color: #1e2022;}
+    .pure_container > .pure_box > ul > li > ul {width: 100%; color: #c9d6de;}
+
+    .pure_container > .purezone_box {width: 100%;height: 35%; position: relative;}
+    .pure_container > .purezone_box > .purezone {position: absolute;position: relative;width: 400px;height: 200px;margin: 0 auto;}
+    .pure_container > .purezone_box > .purezone > i {position: absolute; z-index: 5; cursor: pointer;transition: all 0.3s ease 0s;text-align: left;top: 60px;font-size: 80px; color: #f0f5f9;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(2) {right: 0;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(1) {left: 0;}
+    .pure_container > .purezone_box > .purezone > i:hover {color: #000;}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(2):active {transform: translate(3px, 3px);}
+    .pure_container > .purezone_box > .purezone > i:nth-of-type(1):active {transform: translate(-3px, 3px);}
+    .pure_container > .purezone_box > .purezone > div {position: absolute; width: 100%;height: 100%;left: 0;top: 0;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure {position: absolute;width: 200px;height:200px;left: 50%;transform: translateX(-50%);top: 0;text-align: center;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure > .emoji {position: absolute;left: 12%; top: 10%;display: none;}
+    .pure_container > .purezone_box > .purezone > div > .kakao_pure > .emoji:nth-of-type(1) {display: block;}
+    /* 페이스북 이모지 */
+    .emoji {
+        position: relative;
+        display: inline-block; 
+        width: 120px;height: 120px;
+        border-radius: 50%;
+        margin: 15px 15px 15px;
+        background: #ffda6a;
+    }
+    /* emoji emoji_like*/
+    .emoji_like {
+        background: #548dff;
+        top: 0px;
+    }
+    .emoji_like .emoji_hand {
+        position: absolute;
+        left: 25px;bottom: 30px;
+        width: 20px;height: 40px;
+        background: #fff;
+        border-radius: 5px;
+        animation: hands-up 2s linear 0s infinite;
+    }
+    @keyframes hands-up {
+        25% {transform: rotate(15deg);}
+        50% {transform: rotate(-15deg) translateY(-10px);}
+        75%,100% {transform: rotate(0deg);}
+    }
+
+    .emoji_like .emoji_hand::before {
+        content: "";
+        position: absolute;
+        left: 25px;bottom: 5px; 
+        width: 40px;height: 10px;
+        background: #fff;
+        border-radius: 2px 10px 10px 2px;
+        box-shadow: 1px -9px 0 1px #fff,2px -19px 0 2px #fff,3px -29px 0 3px #fff;
+    }
+    .emoji_like .emoji_thumb {
+        position: absolute; 
+        right: -25px;top: -25px;
+        border-bottom: 20px solid #fff;
+        border-left: 20px solid transparent; 
+        transform: rotate(5deg);
+        transform-origin: 0 100%;
+        animation: thumb-up 2s linear 0s infinite;
+    }
+    @keyframes thumb-up {
+        25% {transform: rotate(20deg);}
+        50%, 100% {transform: rotate(5deg);}
+    }
+    .emoji_like .emoji_thumb::before {
+        content: '';
+        position: absolute;
+        left: -9.7px;top: -9px;
+        width: 10px;height: 12px;
+        background: #fff;
+        border-radius: 50% 50% 0 0;
+        box-decoration-break: -1px 4px 0 0 #fff;
+        transform: rotate(-14deg);
+        transform-origin: 100% 100% 
+    }
+    /* emoji_love */
+    .emoji_love {
+        background: #f00; 
+        top: 0;
+    }
+    .emoji_love .emoji_heart {
+        position: absolute; 
+        left: 50%;top: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        width: 80px;height: 80px;
+        /* border: 1px solid #000; */
+        animation: heart-beat 1s linear infinite alternate;
+    }
+    @keyframes heart-beat {
+        25% {transform: scale(1.1);}
+        75% {transform: 0.6;}
+    }     
+    .emoji_heart::before, .emoji_heart::after {
+        content: '';
+        position: absolute;
+        left: 50%;top: 50%;
+        width: 40px;height: 64px;
+        margin-left: -20px;
+        margin-top: -32px;
+        background: #fff;
+        border-radius: 20px 20px 0 0;
+    }
+    .emoji_heart::before {
+        transform-origin: 0 100%;
+        transform:translateX(20px) rotate(-45deg);
+    }
+    .emoji_heart::after {
+        transform-origin: 100% 100%;
+        transform: translateX(-20px) rotate(45deg);
+    }
+    /* emoji emoji_haha */
+    .emoji.emoji_haha {top: 0;}
+    .emoji_haha .emoji_face {
+        position: absolute;
+        width: 100%; height: inherit; /* border: 1px solid #f00; */
+        animation:haha-face 2s linear infinite normal ;
+    }
+    @keyframes haha-face{
+        10% {transform: translateY(25px);}
+        20% {transform: translateY(15px);}
+
+        30% {transform: translateY(25px);}
+        20% {transform: translateY(15px);}
+
+        50% {transform: translateY(25px);}
+
+        60% {transform: translateY(0px);}
+        70% {transform: translateY(-10px);}
+
+        80% {transform: translateY(0px);}
+        90% {transform: translateY(-10px);}
+
+    }
+    .emoji_haha .emoji_eyes {
+        position: absolute; 
+        left: 50%;top: 35px;
+        margin-left: -13px;
+        width: 26px;height: 6px;
+        border-radius: 2px;
+        /* background: #fff; */
+        box-shadow: -25px 5px 0 0 #000,25px -5px 0 0 #000;
+        transform: rotate(20deg);
+    }
+    .emoji_haha .emoji_eyes::after {
+        content: "";
+        position: absolute;
+        left: 0;top: 0;
+        width: 26px;height: 6px;
+        border-radius: 2px;
+        box-shadow: -25px -5px 0 0 #000,25px 5px 0 0 #000;
+        transform: rotate(-40deg);
+    }    
+    .emoji_haha .emoji_mouth {
+        overflow: hidden;
+        position: absolute;
+        left: 50%;top: 50%;
+        width: 80px; height: 40px;
+        margin-left: -40px;
+        background: #000;
+        border-radius: 0 0 40px 40px;
+        animation: haha-mouth 2s linear infinite normal;
+    }
+                
+    @keyframes haha-mouth{
+        10% {transform:scale(0.6);top:45px;}
+        20% {transform:scale(0.8);top:45px;}
+
+        30% {transform:scale(0.6);top:45px;}
+        40% {transform:scale(0.8);top:45px;}
+
+        50% {transform:scale(0.6);top:45px;}
+
+        60% {transform:scale(1);top:50px;}
+        70% {transform:scale(1.2);top:50px;}
+
+        80% {transform:scale(1);top:50px;}
+        90% {transform:scale(1.1);top:50px;}
+    }         
+    .emoji_haha .emoji_tongue {
+        position: absolute;
+        left: 50%;bottom: -10px;
+        width: 70px;height: 30px;
+        margin-left: -35px;
+        background: #f55064;
+        border-radius: 50%;
+    }      
+    /* yay */
+    .emoji.emoji_yay {
+        top: 0;
+    }
+    .emoji_yay .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: yay 1s linear infinite alternate;
+    }
+    @keyframes yay{
+        25% {transform: rotate(-15deg);}
+        75% {transform: rotate(15deg);}
+    }    
+    .emoji_yay .emoji_eyebrows {
+        position: absolute; 
+        left: calc(50% - 3px);
+        top: 30px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -6px 0 0 0 #000,-36px 0 0 0 #000000,6px 0 0 0 #000,36px 0 0 0px;
+    }          
+    .emoji_yay .emoji_eyebrows::before,.emoji_yay .emoji_eyebrows::after {
+        content: ""; 
+        position: absolute; 
+        left: calc(50% - 18px);
+        bottom: 3px;
+        width: 36px;height: 18px; 
+        border-radius: 60px 60px 0 0;
+        border:6px solid #000;
+        border-bottom: 0;
+        box-sizing: border-box;
+    }
+    .emoji_yay .emoji_eyebrows::before {
+        margin-left: -21px;
+    } 
+    .emoji_yay .emoji_eyebrows::after {
+        margin-left: 21px;
+    }
+    .emoji_yay .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 3px);
+        top:60px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        /* background: #f00; */
+        box-shadow: -25px 0 0 0 #000,25px 0 0 0 #000
+        ,-35px 2px 30px 10px #D5234C,
+        35px -2px 30px 10px #D5234C;
+    }
+    .emoji_yay .emoji_mouth::after {
+        content: ''; 
+        position: absolute;
+        left: calc(50% - 40px); 
+        top: -64px;
+        width: 80px; height: 80px;
+        border-radius: 50%;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }    
+    /* wow */
+    .emoji.emoji_wow {
+        top: 0; left: 0px;
+    }
+    .emoji_wow .emoji_face {
+        position: absolute; 
+        width: 100%;height: inherit;
+        animation: wow-face 3s linear 0s infinite;
+    }
+    @keyframes wow-face {
+        15%,25% {transform: rotate(20deg) translateX(-25px);}
+        45%,65% {transform: rotate(-20deg) translateX(25px);}
+        75%,100% {transform: rotate(0deg) translateX(0px);}
+    }
+    .emoji_wow .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        /* background: #fff; */
+        box-shadow: -18px 0 0 0 #000, -33px 0 0 0 #000, 18px 0 0 0 #000, 33px 0 0 0 #000;
+        animation:wow-brow 3s linear 0s infinite;
+    }
+    @keyframes wow-brow {
+        15%,65% {top: 25px;}
+        75%,100%,0% {top:15px}
+    }
+    .emoji_wow .emoji_eyebrows::before, .emoji_wow .emoji_eyebrows::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 12px);
+        top: -3px;
+        width: 24px;height: 20px;
+        border-radius: 50%;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_wow .emoji_eyebrows::before {
+        margin-left: -25px;
+    } 
+    .emoji_wow .emoji_eyebrows::after {
+        margin-left: 25px;
+    }    
+    .emoji_wow .emoji_eyes {
+        position: absolute;
+        left: calc(50% - 8px);
+        top: 35px;
+        width: 16px;height: 24px;
+        border-radius: 50%; 
+        /* background: #f00; */
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+    .emoji_wow .emoji_tongue {
+        position: absolute;
+        left: calc(50% - 15px);
+        top: 50%;
+        width: 30px;height: 45px;
+        border-radius: 50%;
+        background: #000;
+        animation:wow-mouth 3s linear 0s infinite;
+    }
+    @keyframes wow-mouth {
+        10%,30% {width: 20px;height: 20px;left: calc(50% - 10px);}
+        50%,70% {width: 30px;height: 40px;left: calc(50% - 15px);}
+        75%,100% {height: 50px;}
+    }
+    /* emoji emoji_sad */
+    .emoji.emoji_sad {
+        top: 0; left: 0;
+    }
+    .emoji_sad .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: sad-face 2s ease-in 0s infinite;
+    }
+    @keyframes sad-face {
+        25%, 35% {top: -15px;}
+        55%, 95% {top: 10px;}
+        100%, 0% {top: 0px;}
+    }
+    .emoji_sad .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 35px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -40px 9px 0 0 #000,-25px 0 0 0 #000, 25px 0 0 0 #000,40px 9px 0 0 #000;
+    }
+    .emoji_sad .emoji_eyebrows::before , .emoji_sad .emoji_eyebrows::after {
+        content: ''; 
+        position: absolute;
+        left: calc(50% - 15px);
+        top: 2px;
+        width: 30px;height: 20px;
+        border: 6px solid #000;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border-left-color: transparent; 
+        border-right-color: transparent; 
+        border-bottom-color: transparent;
+    }
+    .emoji_sad .emoji_eyebrows::before {
+        margin-left: -30px;
+        transform: rotate(-30deg);
+    }
+    .emoji_sad .emoji_eyebrows::after {
+        margin-left: 30px;
+        transform: rotate(30deg);
+    }
+    .emoji_sad .emoji_eyes { 
+        position: absolute;
+        left: calc(50% - 7px);
+        top: 50px;
+        width: 14px;height: 16px;
+        border-radius: 50%; 
+        /* background: #f00; */
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+    .emoji_sad .emoji_eyes::after {
+        content: '';
+        position: absolute;
+        width: 12px;height: 12px;
+        margin-left: 6px;
+        background: #548dff;
+        border-radius: 0 100% 40% 50% / 0 50% 40% 100%;
+        transform-origin: 0% 0%;
+        animation:tear-drop 2s ease-in infinite ;
+    }
+    @keyframes tear-drop{
+        0%,100% {
+            display: block;left: 35px;top: 15px;
+            transform: rotate(45deg) scale(0);
+        }
+        25% {
+            display: block;left: 35px;
+            transform: rotate(45deg) scale(2);
+        }
+        49.9% {
+            display: block;left: 35px;top: 65px;
+            transform: rotate(45deg) scale(0);
+        }
+        50% {
+            display: block;left: -35px;top: 15px;
+            transform: rotate(45deg) scale(0);
+        }
+        75% {
+            display: block;left: -35px;top: 15px;
+            transform: rotate(45deg) scale(2);
+        }
+        99.9% {
+            display: block;left: -35px;top: 65px;
+            transform: rotate(45deg) scale(0);
+        }
+    }
+
+    .emoji_sad .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 90px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -18px 0 0 0 #000,18px 0 0 0 #000;
+    }
+    .emoji_sad .emoji_mouth::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 30px);
+        top: -10px;
+        width: 60px;height: 80px;
+        box-sizing: border-box;
+        border: 6px solid #000;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    /* angry */
+    .emoji.emoji_angry {
+        top: 0; left: -0;
+    }
+    .emoji_angry {
+        background: linear-gradient(to bottom, #D5234C -10%,#FFDA6A 100%);
+        background-size: 100%;
+    }
+    .emoji_angry .emoji_face {
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: angry-face 2s ease-in 0s infinite;
+    }
+    @keyframes angry-face {
+        35%,60% {transform: translateX(0) translateY(10px) scale(0.9);}
+        40% {transform: translateX(-5px) translateY(10px) scale(0.9);}
+        45% {transform: translateX(5px) translateY(10px) scale(0.9);}
+        50% {transform: translateX(-5) translateY(10px) scale(0.9);}
+        55% {transform: translateX(5) translateY(10px) scale(0.9);}
+    }
+    .emoji_angry .emoji_eyebrows {
+        position: absolute;
+        left: calc(50% - 3px);
+        top: 55px;
+        width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -44px 5px 0 0 #000000,-7px 16px 0 0 #000000, 7px 16px 0 0 #000000,44px 5px 0 0 #000000;
+    }
+    .emoji_angry .emoji_eyebrows::before, .emoji_angry .emoji_eyebrows::after {
+        content: ''; 
+        position: absolute; 
+        left: calc(50% - 25px);
+        top: 0;
+        width: 50px;height: 20px;
+        border: 6px solid #000000;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_angry .emoji_eyebrows::before {
+        margin-left: -25px;
+        transform: rotate(15deg);
+    } 
+    .emoji_angry .emoji_eyebrows::after {
+        margin-left: 25px;
+        transform: rotate(-15deg);
+    }                            
+    .emoji_angry .emoji_eyes {
+        position: absolute;
+        left: calc(50% - 6px);
+        top: 70px;
+        width: 12px;height: 12px;
+        border-radius: 50%;
+        box-shadow: 25px 0 0 0 #000000,-25px 0 0 0 #000000;
+    }
+    .emoji_angry .emoji_mouth {
+        position: absolute;
+        left: calc(50% - 18px); 
+        bottom: 15px;
+        width: 36px;height: 18px;
+        background: #000;
+        border-radius: 50%;
+        animation: angry-mouth 2s ease-in 0s infinite;
+    }
+    @keyframes angry-mouth {
+        25%, 50% {height: 6px;bottom: 25px;}
+    }
+
+
+    /* 캔버스 */
+    .canvasBox {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #f0f5f9; border-radius: 50px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    canvas {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 15px;
+    }
+    .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    button,label {
+        all: unset; /* 버튼의 css 속성이 전부 제거가 됨 */
+        padding: 10px 0px;
+        text-align: center;
+        background-color:#f0f5f9; border: 1px solid #ccc;box-sizing: border-box;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all linear .1s;
+    }
+    button:hover {
+        opacity: 0.85;
+        background-color: #1e2022;
+        color: #52616a;
+        font-weight: 500;
+    }
+
+    .color-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        align-items: center;
+    }
+    .color-option {
+        width: 50px;height: 50px;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 5px solid white; 
+        box-sizing: border-box;
+        transition: transform ease-in-out .1s;
+    }
+    .color-option:hover {
+        transform: scale(1.2);
+    }
+    input#color {
+        background-color: white;
+        border: none;
+        width: 100%;
+    }
+    input#text {
+        all: unset; /* 버튼의 css 속성이 전부 제거가 됨 */
+        padding: 10px 0px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: 500;
+        background-color: white;
+    }
+    input#file {
+        display: none;
+    }
+
+    /* 스킬 */
+    .skillBox{
+        position: flex; justify-content: center;align-items: center;
+        height: 100%;width: 100%;
+        min-height: 100vh;
+    }
+    .skill{
+        position: relative; 
+        display: flex;justify-content: center;align-items: center;flex-wrap: wrap;
+        margin: 0 auto;
+        height: 100%;width: 100%;
+    }
+    .skill .skillList {
+        position: relative; 
+        display: flex;justify-content: center;align-items: center;
+        width: 200px; height: 250px;
+    }
+    .skill .skillList:nth-child(8),.skill .skillList:nth-child(7) {display: none;}
+    .skill .skillList .percent {
+        position: relative;width: 150px;height: 150px;
+    }
+    .skill .skillList .percent svg {
+        position: relative;width: 150px;height: 150px; transform: rotate(270deg);
+    }
+    .skill .skillList .percent svg circle {
+        width: 100%;height: 100%; 
+        fill: transparent; stroke-width: 4; stroke: #fff;
+        transform: translate(5px,5px);
+
+    }
+    .skill .skillList .percent svg circle:nth-child(2){
+        stroke: var(--clr);
+        stroke-dasharray: 440;
+        stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+        opacity: 0;
+        animation: fadeIn 1s linear forwards ;
+        animation-delay: 2.5s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .dot {
+        position: absolute;
+        inset: 5px;
+        z-index: 10;
+        /* transform: rotate(calc(3.6deg *var(--num))); */
+        animation:animationDot 2s linear forwards;
+    }
+    @keyframes animationDot {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(calc(3.6deg * var(--num)));
+        }
+    }
+    .dot::before{
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;height: 10px;
+        border-radius: 50%;
+        background:  var(--clr);
+        box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);;
+    }
+    .skNumber{
+        position: absolute;
+        inset: 0;
+        display: flex;justify-content: center;align-items: center;flex-direction: column;
+        opacity: 0;
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 2.5s;
+    }
+    .skNumber h2 {
+        display: flex;justify-content: center;align-items: center;color: #1e2022;font-weight: 700;font-size: 1.5em;
+    }
+    .skNumber h2 span {
+        font-weight: 300;
+        color: #000;
+        font-size: 0.5em;
+    } 
+    .percent p {
+        color: #f0f5f9;
+        font-size: 0.5em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+
+    /* 프로필 */
+    .profileBox {width: 100%;height: 100%;}
+    .profileBox .profile {width: 100%;height: 100%;}
+    .profileBox .profile > .pot {width: 100%;height: 100%; overflow: hidden;}
+    .profileBox .profile > .pot > a > img {width: 100%;height: 100%; object-fit: contain;transform:scale(1);transition: transform .5s;}
+    .profileBox .profile > .pot > a {overflow: hidden;position: relative;transition: opacity 0.3s ease-in-out 0s;margin: 0 auto; width: 400px;height: 400px;vertical-align: middle;}
+    .profileBox .profile > .pot > a:nth-of-type(1),
+    .profileBox .profile > .pot > a:nth-of-type(2),
+    .profileBox .profile > .pot > a:nth-of-type(3),
+    .profileBox .profile > .pot > a:nth-of-type(4),
+    .profileBox .profile > .pot > a:nth-of-type(6) {display: none;}
+    .profileBox .profile > .pot > a:nth-of-type(5) {width: 350px;display: inline-block;transition: opacity 1.5s ease-in-out 0s;transform: translateY(50%);}
+    .profileBox .profile > .pot > a:hover > img {transform:scale(1.5); opacity: 0.5;}
+    /* hover text */
+    .profileBox .profile > .pot > a > span {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: #fff;font-size: 30px;opacity: 0;}
+    .profileBox .profile > .pot > a:hover > span {opacity: 1;}
+
+
+    .contact{
+        width: 100%;height: 100%;overflow-x: hidden;
+    }
+    .cover {
+        width: 100vw;
+        margin-bottom: 10rem;
+        display: flex;
+    }
+
+    .cover:nth-child(1) {
+        margin-top: 10vh;
+        transform: rotate(-2deg);
+        background-color: #ff3796;
+    }
+
+    .cover:nth-child(2) {
+        transform: rotate(2deg);
+        background-color: #f0f5f9;
+        justify-content: flex-end;
+    }
+
+    .cover:nth-child(3) {
+        transform: rotate(-2deg);
+        background-color: #1e2022;
+    }
+
+
+    .cover p {
+        display: flex;
+        padding: 3rem 0;
+        font-size: 5rem;
+    }
+
+
+    /* 10 - contact */
+    .contact {position: relative;width: 100%;height: 100%;}
+    .box {
+        position: absolute; left: 50%;top: 50%; transform: translate(-50%,-50%);
+        color: #000;line-height: 1.2;letter-spacing: 2px;
+        text-shadow: 5px 5px 1px #fff;
+    }
+    .box h3 {font-size: 5vw;}
+    .box b {display: none;}
+    /* 배경 */
+    .bubble {position: absolute;width: 100%;height: 100%;}
+    /* 버블 */
+    .bubble div[class^="bubble_"] {position: absolute;width: 1px;height: 1px;background: #1e2022; opacity: 0.5;border-radius: 50%;}
+    @keyframes bubble_movement {
+        0% {
+            transform: translate3d(0,0,0);
+            width: 1px;height: 1px;
+        }
+        100% {
+            transform: translate3d(0,-500px,0);
+            width: 75px;height: 75px;
+        }
+    }
+    .bubble_1   {bottom: 6px;left: 48%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_2   {bottom: 1px;left: 40%;animation: bubble_movement 4s infinite ease-in -0.26s;}
+    .bubble_3   {bottom: 3px;left: 32%;animation: bubble_movement 4s infinite ease-in -1.23s;}
+    .bubble_4   {bottom: 6px;left: 24%;animation: bubble_movement 4s infinite ease-in -0.53s;}
+    .bubble_5   {bottom: 4px;left: 16%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_6   {bottom: 6px;left: 12%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_7   {bottom: 1px;left: 56%;animation: bubble_movement 4s infinite ease-in -1.67s;}
+    .bubble_8   {bottom: 3px;left: 86%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_9   {bottom: 6px;left: 34%;animation: bubble_movement 4s infinite ease-in -1.23s;}
+    .bubble_10  {bottom: 4px;left: 37%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_11  {bottom: 6px;left: 85%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_12  {bottom: 1px;left: 53%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_13  {bottom: 3px;left: 49%;animation: bubble_movement 4s infinite ease-in -0.32s;}
+    .bubble_14  {bottom: 6px;left: 77%;animation: bubble_movement 4s infinite ease-in -2.23s;}
+    .bubble_15  {bottom: 4px;left: 16%;animation: bubble_movement 4s infinite ease-in -3s;}
+    .bubble_16  {bottom: 6px;left: 66%;animation: bubble_movement 4s infinite ease-in -0.66s;}
+    .bubble_17  {bottom: 1px;left: 32%;animation: bubble_movement 4s infinite ease-in -1.78s;}
+    .bubble_18  {bottom: 3px;left: 73%;animation: bubble_movement 4s infinite ease-in -1.18s;}
+    .bubble_19  {bottom: 6px;left: 62%;animation: bubble_movement 4s infinite ease-in -0.52s;}
+    .bubble_20  {bottom: 4px;left: 23%;animation: bubble_movement 4s infinite ease-in -2.78s;}
+    .bubble div[class^="bubble_"]::after {
+        content: ''; 
+        position: absolute; left: 50%;top: 50%;
+        width: 85%;height: 85%; 
+        border-radius: 50%;
+        border-top: 1px solid hsla(248, 20%, 84%, 0.861);
+        transform: translate3d(-50%,-50%,0) rotateZ(-45deg);
+    }
+}
+
+
+
+footer {z-index: 50;position: fixed; width: 100vw; height: 80px; bottom: 0;}
+footer::after {
+    content: '';display: block;width: 500px;height: 300px;
+    background-color:#52616B;border-radius: 50%;
+    position: absolute; left: 50%;transform: translate(-50%);
+}
+footer a {display: inline-block;margin-right: 30px;}
+footer a:first-child {margin-left: 5%;}
+footer a > i {font-size: 40px; color: #F0F5F9;transition: all 0.3s ease-in 0s;}
+footer a:hover > i {color: #F9EBC8;transform: translateY(-5px);}

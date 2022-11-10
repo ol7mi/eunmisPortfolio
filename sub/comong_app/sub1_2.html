@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon-precomposed" href="images/logo.png" />
+    <link rel="apple-touch-startup-image" href=".png" />
+    
+    <title>검색</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="search_div">
+        <header id="search_header">
+            <div class="search_box">
+                <a href="main.html">
+                    <img src="images/back.png" alt="뒤로가기">
+                </a>
+                <div class="srch_box">
+                    <form action="" method="post">
+                    <fieldset>
+                        <legend class="blind">검색</legend>
+                        <label for="srch" class="blind">검색어입력</label>
+                        <input type="search" id="srch" placeholder="검색어를 입력해주세요" autofocus />
+                        <input type="image" src="images/btn.png" alt="검색버튼" />
+                    </fieldset>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <section id="search_section">
+            <div class="ranking">
+                <h2>가장 많이 검색했어요</h2>
+                <ul>
+                    <li>
+                        <a href="#">1 도자기 만들기</a> 
+                        <span>1위</span> 
+                    </li>
+                    <li>
+                        <a href="#">2 케이크 만들기</a> 
+                        <span>2위</span> 
+                    </li>
+                    <li>
+                        <a href="#">3 초콜릿 만들기</a> 
+                        <span>3위</span> 
+                    </li>
+                    <li>
+                        <a href="#">4 독서 모임</a> 
+                        <span>4위</span> 
+                    </li>
+                    <li>
+                        <a href="#">5 카페 모임</a> 
+                        <span>5위</span> 
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <ul>
+            <li class="on">
+                <a href="main.html">
+                    <img src="images/home.png" alt="홈" />
+                </a>
+            </li>
+            <li>
+                <a href="sub2_1.html">
+                    <img src="images/peed_off.png" alt="피드" />
+                </a>
+            </li>
+            <li>
+                <a href="sub3.html">
+                    <img src="images/save_off.png" alt="저장" />
+                </a>
+            </li>
+            <li>
+                <a href="sub4_1.html">
+                    <img src="images/messenger_off.png" alt="메신저" />
+                </a>
+            </li>
+            <li>
+                <a href="sub5_1.html">
+                    <img src="images/mypage_off.png" alt="마이페이지" />
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+<script defer src="./js/sub.js"></script>
+<script defer src="./js/search.js"></script>
+</html>

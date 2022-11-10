@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Titan+One&display=swap');
+@import url(reset.css);
+body {font-size: 12px; color: #000;}
+a {color: #666;text-decoration: none;}
+
+
+
+#wrap {
+        position: fixed;
+        left: 0;top: 0;width: 100%; height: 100%; min-width: 1024px;min-height: 768px;
+        background: #F0F5F9;background-size: cover;
+}
+/* section */
+section {position: fixed;right: 0;top: 0;width: 100%;height: 100%;}
+section > article:nth-child(1) {
+        position: relative;float: right;width: 30%;height: 100%;overflow: hidden;
+        background: #1e2022 ;
+        transition: width 1s linear 0s;
+} 
+section > article:nth-child(2) {
+        position: relative;float: right;width: 30%;height: 100%;overflow: hidden;
+        background: #52616a ;/*사이사이 줄*/
+        transition: width 1s linear 0s;
+} 
+section > article:nth-child(3) {
+        position: relative;float: right;width: 30%;height: 100%;overflow: hidden;
+        background: #c9d6de ;/*사이사이 줄*/
+        transition: width 1s linear 0s;
+} 
+section > article.on{width: 40%;}/*on*/
+
+
+
+
+/* 제목 왼쪽 border */
+section > article > h2 {
+        z-index: 3; position: absolute;
+        left: 20px;top: 120px;
+        font-size: 30px;font-weight: bold;
+        color: #F0F5F9;
+        border-left: 3px solid #F0F5F9;padding-left: 15px;
+}
+section > article.on > h2 {color: #ccc;border-left: 3px solid #ccc;}
+
+
+
+
+/* section 안에 이미지 */
+section > .web > img {
+        z-index: 1; opacity: 0;position: absolute;object-position: center; object-fit: contain;margin-left: -100px;
+        transition: opacity 2s linear 0s;
+}
+section > article.on > img {opacity: 0.9; }
+/* 유효성 검사 */
+section > .w3c img {
+        z-index: 1; opacity: 0;position: absolute;left: 110px; bottom: 35%;
+        transition: opacity 2s linear 0s; width: 900px;margin-left: -110px;
+}
+section > article h3::before {
+        content: ''; display: block; 
+        background: url(../images/pass.png) no-repeat 0 0; 
+        width: 150px; height: 155px; background-size: 150px; transform: rotate(-15deg);
+        position: absolute; top: -200px; right: 0px;
+        
+}
+/* 웹 접근성 */
+section > .web img {
+        z-index: 1; opacity: 0;position: absolute;left: -50px;bottom: 9%;
+        transition: opacity 2s linear 0s; width: 700px; height: 550px; margin-left: -110px;
+}
+/* 크로스브라우징 */
+section > .crossbrowsing img {
+        z-index: 1; opacity: 0;position: absolute;left: 140px;bottom: 19%;
+        transition: opacity 2s linear 0s; width: 900px;margin-left: -110px;
+}
+.cross{position: absolute;top: 200px; object-fit: contain;height: 90px;}
+
+
+
+
+section > article > div {
+        z-index: 2; opacity: 0; position: absolute;left: 0;top: 0; width: 100%;height: 0;
+        background: #000;opacity: 0.5;transition: all 0.5s ease 0s;
+}
+section > article.on > div {height: 70px; top: 100px;} 
+
+
+section > article > h3 {
+        z-index: 3;position: absolute;right: -310px;bottom: 210px;
+        width: 300px;
+        font-size: 25px; color: #fff;text-align: right;
+        transition:right 0.4s linear 0s;
+}
+section > article.on > h3 {right: 10px;}
+
+
+section > article > p {
+        z-index: 3; opacity: 0.8;position: absolute;right: -310px;bottom: 50px;
+        width: 300px;height: 150px;
+        font-size: 15px;color: #F0F5F9;text-align: right;
+        transition: right 0.8s linear 1s;
+}
+section > article.on > p {right: 10px;}
+
+
+
