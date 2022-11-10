@@ -847,7 +847,7 @@ section {
         position: relative; 
         display: flex;justify-content: center;align-items: center;flex-wrap: wrap;
         margin: 0 auto;
-        height: 80%;width: 600px;background-color: yellow;
+        height: 80%;width: 600px;
     }
     .skill .skillList {
         position: relative; 
