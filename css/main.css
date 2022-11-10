@@ -2135,7 +2135,7 @@ html {
     }
     .project_box .hed h2 {
         width: 100%;height: 100%;
-        font-size: 12px; color: #c9d6de; text-shadow: 1px 1px 1px #3B3A38;
+        font-size: 5px; color: #c9d6de; text-shadow: 1px 1px 1px #3B3A38;
         display: flex;flex-direction: row; justify-content: center; align-items: center;
         transition: color ease 0.5s;
         opacity: 0.5;animation: top 2s alternate 1s infinite;
@@ -2148,7 +2148,7 @@ html {
     /* 버튼 */
     .project_box > .btn {
         background-color: #f0f5f9;width: 100%;height: 10%;
-        font-size: 12px;
+        font-size: 5px;
     }
     .project_box > .btn span {
         width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-around; align-items: center;
@@ -2179,7 +2179,6 @@ html {
         }
 
         .card {
-            font-size: 20vw;
             width: 35vw;
             height: 50vw;
         }
@@ -2214,22 +2213,14 @@ html {
         background-color: rgb(255, 255, 255);
         border-radius: 20px 20px 0 0;
     }
-    .react > .movie_kakao > div > div > .imgbox > div > header > i {
-        font-size: 20px; text-align: center; color: #999; 
-        width: 10%;
-        padding-top: 5px;
-        transition: color 0.3s ease-in 0s;
-    }
-    .react > .movie_kakao > div > div > .imgbox:hover > div > header > i {
-        color: #ccc;
-    }
+    .react > .movie_kakao > div > div > .imgbox > div > header > i {display: none;}
     .react > .movie_kakao > div > div > .imgbox:hover > div::after {color: #333;}
     .react > .movie_kakao > div > div > .imgbox > div > header > span {
         background:#c9d6de;
         color: #f0f5f9; text-shadow: 2px 2px 1px #ccc; 
-        letter-spacing: 5px; font-size: 12px;
+        letter-spacing: 5px; font-size: 5px;
         border-radius: 10px;
-        width: 55%;height: 50%;
+        width: 90%;height: 40%;margin: 0 auto;
         margin-top: 5px;box-sizing: border-box;
         padding-left: 5%; 
     }
@@ -2250,16 +2241,13 @@ html {
 
     /* 이모지 */
     .pure_container {width: 100%;height: 100%;display: flex;flex-direction: column;}
-    .pure_container > .pure {width: 100%;height: 30%;}
+    .pure_container > .pure {width: 100%;height: 50%;margin-top: 5%;box-sizing: border-box;}
     .pure_container > .pure > .pure_tit {color: #000;font-size: 2rem;letter-spacing: 2px;line-height: 2.5;margin-top: 3%;box-sizing: border-box;}
     .pure_container > .pure > .pure_tit p:last-child{font-size: 1rem;color: #f0f5f9;text-shadow: 1px 1px 1px #000;}
 
-    .pure_container > .pure_box {width: 100%;height: 35%;font-size: 1rem;}
-    .pure_container > .pure_box > ul {display: flex;flex-direction: row;align-items: center; width: 50%;height: 80%; margin: 0 auto;border-radius: 20px;border: dotted 1px #f0f5f9; background-color: #c9d6de;box-sizing: border-box;}
-    .pure_container > .pure_box > ul > li {width: 100%; letter-spacing: 2px;line-height: 2; color: #1e2022;}
-    .pure_container > .pure_box > ul > li > ul {width: 100%; color: #c9d6de;}
+    .pure_container > .pure_box > ul {display: none;}
 
-    .pure_container > .purezone_box {width: 100%;height: 35%; position: relative;}
+    .pure_container > .purezone_box {width: 100%;height: 50%; position: relative;margin-bottom: 30%;box-sizing: border-box;}
     .pure_container > .purezone_box > .purezone {position: absolute;position: relative;width: 400px;height: 200px;margin: 0 auto;}
     .pure_container > .purezone_box > .purezone > i {position: absolute; z-index: 5; cursor: pointer;transition: all 0.3s ease 0s;text-align: left;top: 60px;font-size: 80px; color: #f0f5f9;}
     .pure_container > .purezone_box > .purezone > i:nth-of-type(2) {right: 0;}
@@ -2809,6 +2797,7 @@ html {
         box-sizing: border-box;
         transition: transform ease-in-out .1s;
     }
+    .color-option:nth-child(8),.color-option:nth-child(7) {display: none;}
     .color-option:hover {
         transform: scale(1.2);
     }
@@ -2831,22 +2820,20 @@ html {
 
     /* 스킬 */
     .skillBox{
-        position: flex; justify-content: center;align-items: center;
         height: 100%;width: 100%;
         min-height: 100vh;
+        margin-top: 30%;
     }
     .skill{
         position: relative; 
-        display: flex;justify-content: center;align-items: center;flex-wrap: wrap;
+        display: flex;justify-content: center;align-items: baseline;flex-wrap: wrap;width:300px;
         margin: 0 auto;
-        height: 100%;width: 100%;
     }
     .skill .skillList {
         position: relative; 
-        display: flex;justify-content: center;align-items: center;
-        width: 200px; height: 250px;
+        width: 150px; height: 180px;
     }
-    .skill .skillList:nth-child(8),.skill .skillList:nth-child(7) {display: none;}
+    .skill .skillList:nth-child(8),.skill .skillList:nth-child(7),.skill .skillList:nth-child(6),.skill .skillList:nth-child(4) {display: none;}
     .skill .skillList .percent {
         position: relative;width: 150px;height: 150px;
     }
