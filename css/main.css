@@ -197,17 +197,17 @@ section {
 
     /* react (movie , kakao) */
     .react {width: 100%;height: 100%;display: flex;flex-direction: column;}
-    .react > .tit {width: 100%;height: 40%;}
-    .react > .tit > div {text-align: left;}
-    .react > .tit > div > p {font-size: 1vw;width: 55%;margin: 0 auto; color: #f0f5f9;}
-    .react > .tit > div > p:nth-of-type(1) {font-size: 1.2vw;text-align: center;margin-top: 3%;box-sizing: border-box;}
-    .react > .tit > div > p:nth-of-type(2) {font-size: 3vw;margin-bottom: 30px;text-align: center; color: #1e2022;}
+    .react > .tit {width: 100%;height: 30%;}
+    .react > .tit > div {text-align: left;margin-top: 3%;}
+    .react > .tit > div > p {font-size: 1vw;width: 55%;margin: 0 auto; color: #f0f5f9;text-align: left;}
+    .react > .tit > div.firstTit > p:nth-of-type(1) {font-size: 1.2vw;box-sizing: border-box;text-align: center;}
+    .react > .tit > div.firstTit > p:nth-of-type(2) {font-size: 3vw; color: #1e2022;text-align: center;}
     .react > .tit > div > p span {color: #1e2022;display: inline-block;width: 130px;font-size: 25px;margin-right: 5px;box-sizing: border-box;}
 
-    .react > .movie_kakao {width: 100%;height: 60%;display: flex;}
+    .react > .movie_kakao {width: 100%;height: 70%;display: flex;}
     .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;}
-    .react > .movie_kakao > div > .movie {width: 50%;height: 90%;position: relative;}
-    .react > .movie_kakao > div > .kakao {width: 50%;height: 90%;position: relative;}
+    .react > .movie_kakao > div > .movie {width: 70%;height: 90%;position: relative;margin: 0 auto;}
+    .react > .movie_kakao > div > .kakao {width: 70%;height: 90%;position: relative;margin: 0 auto;}
     .react > .movie_kakao > div > div > .imgbox {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);}
     .react > .movie_kakao > div > div > .imgbox > div { 
         display: flex; flex-direction: column;
@@ -1204,15 +1204,17 @@ section {
 
     /* react (movie , kakao) */
     .react {width: 100%;height: 100%;display: flex;flex-direction: column;}
-    .react > .tit {width: 100%;height: 20%;}
-    .react > .tit > div {text-align: left;}
-    .react > .tit > div p {display: none;text-align: center;font-size: 2rem; margin-top: 3%;box-sizing: border-box;}
-    .react > .tit > div p:nth-of-type(1),.react > .tit > div p:nth-of-type(2) {display: block;color: #1e2022;}
+    .react > .tit {width: 100%;height: 30%;}
+    .react > .tit > div {text-align: left;margin-top: 3%;}
+    .react > .tit > div > p {font-size: 5vw;width: 55%;margin: 0 auto; color: #f0f5f9;text-align: center;}
+    .react > .tit > div.firstTit > p:nth-of-type(1) {font-size: 3vw;box-sizing: border-box;}
+    .react > .tit > div.firstTit > p:nth-of-type(2) {font-size: 5vw; color: #1e2022;}
+    .react > .tit > div > p span {color: #1e2022;display: inline-block;width: 130px;font-size: 25px;margin-right: 5px;box-sizing: border-box;}
 
-    .react > .movie_kakao {width: 100%;height: 80%;display: flex;}
-    .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;flex-direction: column;margin-top: -5%;box-sizing: border-box;}
-    .react > .movie_kakao > div > .movie {width: 100%;height: 50%;position: relative;}
-    .react > .movie_kakao > div > .kakao {width: 100%;height: 50%;position: relative;}
+    .react > .movie_kakao {width: 100%;height: 70%;display: flex;}
+    .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;}
+    .react > .movie_kakao > div > .movie {width: 100%;height: 100%;position: relative;margin: 0 auto;}
+    .react > .movie_kakao > div > .kakao {width: 100%;height: 100%;position: relative;margin: 0 auto;}
     .react > .movie_kakao > div > div > .imgbox {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);}
     .react > .movie_kakao > div > div > .imgbox > div { 
         display: flex; flex-direction: column;
@@ -1228,7 +1230,7 @@ section {
         border-radius: 20px 20px 0 0;
     }
     .react > .movie_kakao > div > div > .imgbox > div > header > i {
-        font-size: 30px; text-align: center; color: #999; 
+        font-size: 28px; text-align: center; color: #999; 
         width: 10%;
         padding-top: 5px;
         transition: color 0.3s ease-in 0s;
@@ -1242,7 +1244,7 @@ section {
         color: #f0f5f9; text-shadow: 2px 2px 1px #ccc; 
         letter-spacing: 5px; font-size: 18px;
         border-radius: 10px;
-        width: 55%;height: 70%;
+        width: 50%;height: 70%;
         margin-top: 5px;box-sizing: border-box;
         padding-left: 5%; 
     }
@@ -2206,16 +2208,20 @@ section {
 
     /* react (movie , kakao) */
     .react {width: 100%;height: 100%;display: flex;flex-direction: column;}
-    .react > .tit {width: 100%;height: 10%;}
-    .react > .tit > div {text-align: left;}
-    .react > .tit > div p {display: none;text-align: center;font-size: 1.5rem; margin-top: 5%;box-sizing: border-box;}
-    .react > .tit > div p:nth-of-type(1),.react > .tit > div p:nth-of-type(2) {display: block;color: #1e2022;}
+    .react > .tit {width: 100%;height: 40%;}
+    .react > .tit > div {text-align: left;padding-top: 20%;box-sizing: border-box;}
+    .react > .tit > div > p {font-size: 1rem;width: 100%;margin: 0 auto; color: #f0f5f9;text-align: center;}
+    .react > .tit > div.firstTit > p:nth-of-type(1) {box-sizing: border-box;}
+    .react > .tit > div.firstTit > p:nth-of-type(2) {font-size: 1.8rem; color: #1e2022;}
+    .react > .tit > div.lastTit > p span {display: block;width: 100%;}
+    .react > .tit > div.lastTit > p { line-height: 1.5; width: 80%;font-size: 0.5rem;letter-spacing: 2px;}
+    .react > .tit > div > p span {color: #1e2022;display: inline-block;width: 130px;font-size: 1rem;;margin-right: 5px;box-sizing: border-box;}
 
-    .react > .movie_kakao {width: 100%;height: 90%;display: flex;}
-    .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;flex-direction: column;margin-top: -5%;box-sizing: border-box;}
-    .react > .movie_kakao > div > .movie {width: 100%;height: 50%;position: relative;}
-    .react > .movie_kakao > div > .kakao {width: 100%;height: 50%;position: relative;}
-    .react > .movie_kakao > div > div > .imgbox {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);}
+    .react > .movie_kakao {width: 100%;height: 60%;display: flex;}
+    .react > .movie_kakao > div {width: 100%;height: 100%; display: flex;}
+    .react > .movie_kakao > div > .movie {width: 100%;height: 100%;position: relative;}
+    .react > .movie_kakao > div > .kakao {width: 100%;height: 100%;position: relative;}
+    .react > .movie_kakao > div > div > .imgbox {position: absolute; width: 250px;left: 50%;transform: translateX(-50%);}
     .react > .movie_kakao > div > div > .imgbox > div { 
         display: flex; flex-direction: column;
         border: 2px solid #ccc; 
@@ -2230,15 +2236,13 @@ section {
         border-radius: 20px 20px 0 0;
     }
     .react > .movie_kakao > div > div > .imgbox > div > header > i {display: none;}
-    .react > .movie_kakao > div > div > .imgbox:hover > div::after {color: #333;}
+    .react > .movie_kakao > div > div > .imgbox:hover > div::after {color: #52616a;}
     .react > .movie_kakao > div > div > .imgbox > div > header > span {
-        background:#c9d6de;
-        color: #f0f5f9; text-shadow: 2px 2px 1px #ccc; 
-        letter-spacing: 5px; font-size: 5px;
+        color: #52616a; text-shadow: 2px 2px 1px #ccc;text-align: center;
+        letter-spacing: 10px; font-size: 18px;
         border-radius: 10px;
-        width: 90%;height: 40%;margin: 0 auto;
-        margin-top: 5px;box-sizing: border-box;
-        padding-left: 5%; 
+        width: 100%;height: 100%;
+        box-sizing: border-box;
     }
     .react > .movie_kakao > div > div > .imgbox > div > img {
         width: 100%; 
@@ -2258,7 +2262,7 @@ section {
     /* 이모지 */
     .pure_container {width: 100%;height: 100%;display: flex;flex-direction: column;}
     .pure_container > .pure {width: 100%;height: 50%;margin-top: 5%;box-sizing: border-box;}
-    .pure_container > .pure > .pure_tit {color: #000;font-size: 2rem;letter-spacing: 2px;line-height: 2.5;margin-top: 3%;box-sizing: border-box;}
+    .pure_container > .pure > .pure_tit {color: #000;font-size: 1.8rem;letter-spacing: 2px;line-height: 2.5;margin-top: 3%;box-sizing: border-box;}
     .pure_container > .pure > .pure_tit p:last-child{font-size: 1rem;color: #f0f5f9;text-shadow: 1px 1px 1px #000;}
 
     .pure_container > .pure_box > ul {display: none;}

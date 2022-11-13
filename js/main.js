@@ -147,6 +147,7 @@ observer.observe(div[1])
 observer.observe(div[3])
 observer.observe(div[4])
 observer.observe(div[5])
+observer.observe(div[6])
 observer2.observe(div[0]);
 
 
