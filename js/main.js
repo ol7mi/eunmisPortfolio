@@ -3,50 +3,56 @@ window.onload = function(){
     //새로고침시 맨 위로 이동
     setTimeout(()=>{
         scrollTo(0,0);
-    }, 100)
+    }, 100)}
+// window.onload = function(){
+//     //새로고침시 맨 위로 이동
+//     setTimeout(()=>{
+//         scrollTo(0,0);
+//     }, 100)
 
-    //자동 스크롤
-    const elm = document.querySelectorAll('.go');
-    const elmCount = elm.length;
-    elm.forEach(function(item, index){
-        item.addEventListener('mousewheel', function(event){
-            event.preventDefault();
-            let delta = 0;
+//     //자동 스크롤
+//     const elm = document.querySelectorAll('.go');
+//     const elmCount = elm.length;
+//     elm.forEach(function(item, index){
+//         item.addEventListener('mousewheel', function(event){
+//             event.preventDefault();
+//             let delta = 0;
 
-            if (!event) event = window.event;
-            if (event.wheelDelta) {
-                delta = event.wheelDelta / 120;
-                if (window.opera) delta = -delta;
-            } 
-            else if (event.detail)
-                delta = -event.detail / 3;
+//             if (!event) event = window.event;
+//             if (event.wheelDelta) {
+//                 delta = event.wheelDelta / 120;
+//                 if (window.opera) delta = -delta;
+//             } 
+//             else if (event.detail)
+//                 delta = -event.detail / 3;
 
-            let moveTop = window.scrollY;
-            let elmSelector = elm[index];
+//             let moveTop = window.scrollY;
+//             let elmSelector = elm[index];
 
-            // wheel down : move to next section
-            if (delta < 0){
-            if (elmSelector !== elmCount-1){
-                try{
-                moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
-                }catch(e){}
-            }
-            }
+//             // wheel down : move to next section
+//             if (delta < 0){
+//             if (elmSelector !== elmCount-1){
+//                 try{
+//                 moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
+//                 }catch(e){}
+//             }
+//             }
             
-            // wheel up : move to previous section
-            else{
-            if (elmSelector !== 0){
-                try{
-                moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
-                }catch(e){}
-            }
-            }
+//             // wheel up : move to previous section
+//             else{
+//             if (elmSelector !== 0){
+//                 try{
+//                 moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
+//                 }catch(e){}
+//             }
+//             }
 
-            const body = document.querySelector('html');
-            window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
-        });
-    });
-}
+//             const body = document.querySelector('html');
+//             window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
+//         });
+//     });
+// }
+
 
 //카드 효과
 class CardFlipOnScroll {
@@ -94,8 +100,6 @@ class CardFlipOnScroll {
         })
     }
 }
-
-//감시하는 화면
 const mainContent1 = document.querySelector('.main-content-1')
 const sticky = document.querySelector('.sticky')
 const cardFlipOnScroll = new CardFlipOnScroll(mainContent1, sticky)
@@ -109,6 +113,9 @@ window.addEventListener('resize', () => {
     cardFlipOnScroll.init()
 })
 
+
+
+//감시하는 화면
 let observer = new IntersectionObserver((e)=>{
     e.forEach((on)=>{
         if(on.isIntersecting){
@@ -118,15 +125,29 @@ let observer = new IntersectionObserver((e)=>{
         }
     })
 })
+// 세번째 스킬 관련
+let observer2 = new IntersectionObserver((e)=>{
+    let dot = document.getElementsByClassName('dot')
+    if (e[0].isIntersecting){
+        for(let i = 0; i< dot.length; i++){
+            dot[i].classList.add('on')
+        }
+    }
+    else{
+        for(let i = 0; i< dot.length; i++){
+            dot[i].classList.remove('on')
+        }
+    }
+})
+
 let div = document.querySelectorAll('section')
-console.log(div)
 observer.observe(div[0]) //observe 감시해줌
-observer.observe(div[1])
 observer.observe(div[2])
+observer.observe(div[1])
 observer.observe(div[3])
 observer.observe(div[4])
 observer.observe(div[5])
-// console.log(div[0]);
+observer2.observe(div[0]);
 
 
 

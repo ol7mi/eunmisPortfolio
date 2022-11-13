@@ -896,7 +896,7 @@ section {
             opacity: 1;
         }
     }
-    .dot {
+    .dot.on {
         position: absolute;
         inset: 5px;
         z-index: 10;
